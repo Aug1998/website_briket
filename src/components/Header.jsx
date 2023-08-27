@@ -54,7 +54,7 @@ const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8vw;
+  padding: 0 16vw;
   background-color: white;
   @media only screen and (max-width: 800px) {
     padding: 0 0;
@@ -64,9 +64,9 @@ const HeaderInner = styled.div`
 
 const Nav = styled.div`
   a {
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 1px;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
     color: black;
