@@ -174,14 +174,14 @@ const AboutUs = styled.div`
 const Label = styled.h3`
  text-transform: uppercase;
  font-weight: 600;
- font-size: 22px;
- padding: 0 16vw 2px;
+ font-size: 1.8em;
+ padding: 0 16vw 4px;
  position: relative;
- margin: 28px 0;
+ margin: 40px 0 30px;
  &::before {
   content: "";
   width: 40px;
-  height: 2px;
+  height: 4px;
   background-color: #1f3664;
   position: absolute;
   left: 0;
@@ -282,7 +282,7 @@ const Postventa = styled.div`
   align-items: center;
   justify-content: center;
   gap: 60px;
-  padding: 40px 0;
+  padding: 60px 0;
 `
 
 const PostventaItem = styled.div`
