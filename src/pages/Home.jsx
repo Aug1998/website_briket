@@ -271,6 +271,7 @@ const HeroBoxes = styled.div`
   padding: 0 14vw;
   @media only screen and (max-width: 800px) {
     padding: 0 8vw;
+    margin-top: -50px;
   }
 `
 
@@ -296,6 +297,11 @@ const Box = styled.div`
     height: 100%;
     filter: ${props => (props.isSelected ? "brightness(100)" : "")};
   }
+  @media only screen and (max-width: 800px) {
+    width: 25vw;
+    height: 21vw;
+    padding: 16px;
+  }
 `
 
 const AboutUs = styled.div`
@@ -318,7 +324,7 @@ const AboutUs = styled.div`
     p{
       max-width: 44ch;
       font-size: 1.2em;
-      line-height: 1.3em;
+      line-height: 1.5em;
     }
   }
   img{
@@ -327,6 +333,17 @@ const AboutUs = styled.div`
   }
   @media only screen and (max-width: 800px) {
     padding: 80px 8vw;
+    img{
+      display: none;
+    }
+    div {
+    h3{
+      font-size: 2em;
+    }
+    p{
+      font-size: 1.1em;
+    }
+  }
   }
 `
 

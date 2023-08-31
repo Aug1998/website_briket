@@ -39,4 +39,13 @@ const ButtonContainer = styled.a`
     margin-left: 2px;
     width: 44px;
   }
+  @media only screen and (max-width: 800px) {
+    width: 60px;
+    height: 60px;
+    right: 22px;
+    bottom: 22px;
+    svg {
+      width: 32px;
+    }
+  }
 `

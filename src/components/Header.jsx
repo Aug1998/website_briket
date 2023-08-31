@@ -28,8 +28,8 @@ const Header = (props) => {
         <MobileNav isOpen={mobileNavIsOpen}>
           <a href="#">Inicio</a>
           <a href="#nosotros">Nosotros</a>
-          <a href="#nosotros">Productos</a>
-          <a href="#nosotros">Postventa</a>
+          <a href="#productos">Productos</a>
+          <a href="#postventa">Postventa</a>
           <a href="#contacto">Contacto</a>
         </MobileNav>
       )}
@@ -56,6 +56,7 @@ const HeaderInner = styled.div`
   justify-content: space-between;
   padding: 0 16vw;
   background-color: white;
+  z-index: 99;
   @media only screen and (max-width: 800px) {
     padding: 0 0;
     justify-content: center;
@@ -86,13 +87,13 @@ const MobileNav = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: -40px;
+  top: -172px;
   background-color: white;
   width: 100%;
   padding: 0px 50px 20px;
   z-index: 98;
   transition: all 0.3s;
-  transform: ${props => props.isOpen? "translateY(150px)" : ""};
+  transform: ${props => props.isOpen? "translateY(282px)" : ""};
   a {
     font-size: 14px;
     letter-spacing: 1px;

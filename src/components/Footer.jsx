@@ -78,16 +78,21 @@ const ContactContainer = styled.div`
   p {
     font-size: 0.9em;
   }
+  
 `
 
 const SocialMediaContainer = styled.div`
   margin-top: 20px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   svg {
     width: 30px;
     height: 30px;
     filter: brightness(1000);
+  }
+  @media only screen and (max-width: 800px) {
+    justify-content: center;
+    margin-top: 40px;
   }
 `
 

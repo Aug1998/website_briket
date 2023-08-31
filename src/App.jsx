@@ -9,10 +9,14 @@ import Home from "./pages/Home";
 import Argentina from "./pages/Argentina";
 
 function App() {
+
+  const mql = window.matchMedia('(max-width: 800px)');
+  let isMobile = mql.matches;
+
   return (
     <>
     <WhatsappFloatingButton />
-    <Header />
+    <Header isMobile={isMobile} />
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/argentina" element={<Argentina/>} />
