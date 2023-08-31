@@ -6,7 +6,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import WhatsappFloatingButton from './components/WhatsappFloatingButton'
 import Home from "./pages/Home";
-import Argentina from "./pages/Argentina";
+import ServicioTecnico from "./pages/ServicioTecnico";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
     <Header isMobile={isMobile} />
     <Routes>
       <Route path="/" element={<Home/>} />
-      <Route path="/argentina" element={<Argentina/>} />
+      <Route path="/servicio-tecnico" element={<ServicioTecnico/>} />
     </Routes>
     <Footer />
     </>

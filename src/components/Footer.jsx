@@ -85,6 +85,12 @@ const SocialMediaContainer = styled.div`
   margin-top: 20px;
   display: flex;
   gap: 12px;
+  a{
+    transition: 0.2s;
+    &:hover{
+      transform: translateY(-3px);
+    }
+  }
   svg {
     width: 30px;
     height: 30px;

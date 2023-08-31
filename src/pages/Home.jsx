@@ -60,7 +60,7 @@ export default function Home() {
       <Label>Productos</Label>
       <ProductsCTAContainer>
         <ProductsBanner>Conocé todos nuestros productos</ProductsBanner>
-        <ProductsCTA>Click Acá</ProductsCTA>
+        <ProductsCTA href='http://www.briketweb.com.ar/v2/index.php' target='_blank'>Click Acá</ProductsCTA>
       </ProductsCTAContainer>
       <Lineas>
         {selectedLine === "comercial" ? (
@@ -396,6 +396,7 @@ const ProductsBanner = styled.h3`
 
 const ProductsCTA = styled.a`
   text-transform: uppercase;
+  text-decoration: none;
   padding: 12px 30px;
   background-color: #1f3664;
   border-radius: 10px;
