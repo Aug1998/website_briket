@@ -60,7 +60,7 @@ export default function Home() {
       <Label>Productos</Label>
       <ProductsCTAContainer>
         <ProductsBanner>Conocé todos nuestros productos</ProductsBanner>
-        <ProductsCTA>Click Aca</ProductsCTA>
+        <ProductsCTA>Click Acá</ProductsCTA>
       </ProductsCTAContainer>
       <Lineas>
         {selectedLine === "comercial" ? (
@@ -144,6 +144,7 @@ export default function Home() {
           <div style={{backgroundImage:`url("./img/postventa/servicio-tecnico.png")`}}>
             <h4>Servicio Técnico</h4>
             <p>Contamos con cobertura en todo el país, consulta por localidad.</p>
+            <a target="_blank" role="button" href="/servicio-tecnico">Consultá acá</a>
           </div>
         </PostventaItem>
         <PostventaItem>
@@ -250,9 +251,14 @@ export default function Home() {
 const HeroImage = styled.div`
   background-image: url("./img/hero.png");
   background-position-y: 100%;
+  background-repeat: no-repeat;
   background-size: 100%;
   height: calc(100vh - 110px);
   background-color: gray;
+  @media only screen and (max-width: 800px) {
+    height: 350px;
+    background-size: cover;
+  }
 `
 
 const HeroBoxes = styled.div`
@@ -263,6 +269,9 @@ const HeroBoxes = styled.div`
   justify-content: space-between;
   margin-top: -130px;
   padding: 0 14vw;
+  @media only screen and (max-width: 800px) {
+    padding: 0 8vw;
+  }
 `
 
 const Box = styled.div`
@@ -316,6 +325,9 @@ const AboutUs = styled.div`
     width: 30vw;
     max-width: 540px;
   }
+  @media only screen and (max-width: 800px) {
+    padding: 80px 8vw;
+  }
 `
 
 const Label = styled.h3`
@@ -335,6 +347,13 @@ const Label = styled.h3`
   bottom: 0;
   margin: 0 16vw;
  }
+  @media only screen and (max-width: 800px) {
+    padding: 0 8vw 4px;
+    font-size: 1.6em;
+    &::before {
+      margin: 0 8vw;
+    }
+  }
 `
 
 const ProductsCTAContainer = styled.div`
@@ -353,6 +372,9 @@ const ProductsBanner = styled.h3`
  color: white;
  position: relative;
  text-align: center;
+  @media only screen and (max-width: 800px) {
+    font-size: 2em;
+  }
 `
 
 const ProductsCTA = styled.a`
@@ -372,6 +394,9 @@ const ProductsCTA = styled.a`
     background-color: #2a4479;
     transform: translateY(-4px);
   }
+  @media only screen and (max-width: 800px) {
+    font-size: 1.6em;
+  }
 `
 
 const Lineas = styled.div`
@@ -388,6 +413,13 @@ const Lineas = styled.div`
     -moz-user-drag: none;
     -o-user-drag: none;
   }
+  @media only screen and (max-width: 800px) {
+    padding: 70px 8vw;
+    gap: 30px;
+    img {
+      max-width: 50%;
+    }
+  }
 `
 
 const Productos = styled.div`
@@ -397,6 +429,10 @@ const Productos = styled.div`
   padding: 50px 0 40px;
   gap: 50px;
   background-color: #f4f5f9;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `
 
 const Producto = styled.a`
@@ -433,6 +469,10 @@ const Producto = styled.a`
     font-size: 2em;
     margin-bottom: 16px;
   }
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `
 
 const Postventa = styled.div`
@@ -442,6 +482,9 @@ const Postventa = styled.div`
   justify-content: center;
   gap: 60px;
   padding: 60px 0;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `
 
 const PostventaItem = styled.div`
@@ -482,6 +525,19 @@ const PostventaItem = styled.div`
       font-size: 1.6em;
       color: #0033a1;
       line-height: 1.2em;
+    }
+  }
+  a {
+    background-color: #1f3664;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 18px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    &:hover{
+      background-color: #2a4479;
+      transform: translateY(-3px);
     }
   }
 `
