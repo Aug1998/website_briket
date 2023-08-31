@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <>
       <HeroImage></HeroImage>
+      <a name="nosotros"/>
       <HeroBoxes>
         <Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
           <img src='./img/empresa.png' />
@@ -21,14 +22,41 @@ export default function Home() {
         </Box>
       </HeroBoxes>
       <AboutUs>
-        <div>
-          <h3>Nuestra empresa</h3>
-          <p>
-            Briket SA es una empresa 100% nacional que nació en la ciudad de Rosario con más de 65 años de trayectoria y que cuenta con una planta industrial de 25.000 m2 cubiertos desde donde se producen heladeras, freezers y exhibidoras comerciales, logrando en la actualidad posicionarse como una de las marcas líderes de refrigeración en el país.
-          </p>
-        </div>
-        <img src='./img/foto.png' />
+        {selectedBox === "empresa" && (
+          <>
+            <div>
+              <h3>Nuestra empresa</h3>
+              <p>
+                Briket SA es una empresa 100% nacional que nació en la ciudad de Rosario con más de 65 años de trayectoria y que cuenta con una planta industrial de 25.000 m2 cubiertos desde donde se producen heladeras, freezers y exhibidoras comerciales, logrando en la actualidad posicionarse como una de las marcas líderes de refrigeración en el país.
+              </p>
+            </div>
+            <img src='./img/foto.png' />
+          </>
+        )}
+        {selectedBox === "trayectoria" && (
+          <>
+            <div>
+              <h3>Trayectoria</h3>
+              <p>
+              Con nuestro amplio lineal de productos y la experiencia de mas de 65 años adaptándonos a las necesidades del consumidor logramos que miles de familias confiaran en nosotros en refrigerar sus alimentos en sus hogares así también como comercios, supermercados, marcas de alimentos y bebidas para conservar y comercializar sus productos.
+              </p>
+            </div>
+            <img src='./img/foto.png' />
+          </>
+        )}
+        {selectedBox === "planta" && (
+          <>
+            <div>
+              <h3>Planta industrial</h3>
+              <p>
+                En un predio de 50.000 m2, con una Planta Industrial y oficinas administrativas de 10.000 m2.
+              </p>
+            </div>
+            <img src='./img/planta-industrial.jpg' />
+          </>
+        )}
       </AboutUs>
+      <a name="productos"/>
       <Label>Productos</Label>
       <ProductsCTAContainer>
         <ProductsBanner>Conocé todos nuestros productos</ProductsBanner>
@@ -65,6 +93,7 @@ export default function Home() {
           <div role='button'>&gt;</div>
         </Producto>
       </Productos>
+      <a name="postventa"/>
       <Label>Postventa</Label>
       <Postventa>
         <PostventaItem>
@@ -213,6 +242,7 @@ export default function Home() {
           </div>
         </PostventaItem>
       </Postventa>
+      <a name="contacto"/>
     </>
   )
 }
@@ -329,7 +359,7 @@ const ProductsCTA = styled.a`
   text-transform: uppercase;
   padding: 12px 30px;
   background-color: #1f3664;
-  border-radius: 3px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 2em;
   color: white;
@@ -390,6 +420,7 @@ const Producto = styled.div`
     height: 36px;
     color: white;
     font-size: 2em;
+    cursor: pointer;
   }
 `
 
