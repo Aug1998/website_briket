@@ -76,18 +76,18 @@ export default function Home() {
       </Lineas>
       <Productos>
         {selectedLine === "hogar" && (
-          <Producto>
+          <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=heladera' target='_blank'>
             <img src="./img/productos/heladeras.png" alt="" />
             <h3>Heladeras</h3>
             <div role='button'>&gt;</div>
           </Producto>
         )}
-        <Producto>
+        <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=freezer' target='_blank'>
           <img src="./img/productos/freezers.png" alt="" />
           <h3>Freezers</h3>
           <div role='button'>&gt;</div>
         </Producto>
-        <Producto>
+        <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=exhibidora' target='_blank'>
           <img src="./img/productos/exhibidoras.png" alt="" />
           <h3>Exhibidoras</h3>
           <div role='button'>&gt;</div>
@@ -366,7 +366,12 @@ const ProductsCTA = styled.a`
   position: relative;
   text-align: center;
   margin-top: -40px;
+  transition: 0.3s;
   cursor: pointer;
+  &:hover{
+    background-color: #2a4479;
+    transform: translateY(-4px);
+  }
 `
 
 const Lineas = styled.div`
@@ -389,18 +394,24 @@ const Productos = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  padding: 50px 0 40px;
   gap: 50px;
   background-color: #f4f5f9;
 `
 
-const Producto = styled.div`
+const Producto = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: #f4f5f9;
   gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  &:hover{
+    filter: brightness(108%);
+  }
   h3 {
     text-transform: uppercase;
     color: #0033a1;
@@ -420,7 +431,7 @@ const Producto = styled.div`
     height: 36px;
     color: white;
     font-size: 2em;
-    cursor: pointer;
+    margin-bottom: 16px;
   }
 `
 
