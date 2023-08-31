@@ -65,6 +65,9 @@ const FooterContainer = styled.div`
   @media only screen and (max-width: 800px) {
     flex-direction: column;
   }
+  @media only screen and (max-width: 1350px) {
+    padding: 40px 6vw;
+  }
 `
 
 const ContactContainer = styled.div`

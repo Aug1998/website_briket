@@ -61,6 +61,9 @@ const HeaderInner = styled.div`
     padding: 0 0;
     justify-content: center;
   }
+  @media only screen and (max-width: 1350px) {
+    padding: 0 6vw;
+  }
 `
 
 const Nav = styled.div`
