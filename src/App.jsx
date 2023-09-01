@@ -19,6 +19,7 @@ function App() {
     <Header isMobile={isMobile} />
     <Routes>
       <Route path="/" element={<Home/>} />
+      <Route path="/briket" element={<Home/>} />
       <Route path="/servicio-tecnico" element={<ServicioTecnico/>} />
     </Routes>
     <Footer />

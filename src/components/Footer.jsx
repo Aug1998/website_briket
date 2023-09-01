@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 export default function Footer() {
   return (
     <FooterContainer>
-      <img src="img/logo.png" alt="" />
+      <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="" />
       <ContactContainer>
         <h5>Contacto</h5>
         <p>Ov. Lagos 7245 - C.C. N° 3 Suc. 18 - 2000 Rosario - Argentina</p>
@@ -45,7 +45,7 @@ export default function Footer() {
         </SocialMediaContainer>
       </ContactContainer>
       <Certificados>
-        <img src="img/certificados.png" alt="" />
+        <img src={process.env.PUBLIC_URL + "/img/certificados.png"} alt="" />
       </Certificados>
     </FooterContainer>
   )

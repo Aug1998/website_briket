@@ -8,17 +8,17 @@ export default function Home() {
 
   return (
     <>
-      <HeroImage></HeroImage>
+      <HeroImage style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/hero.png")`}} />
       <a name="nosotros"/>
       <HeroBoxes>
         <Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
-          <img src='./img/empresa.png' />
+          <img src={process.env.PUBLIC_URL + '/img/empresa.png'} />
         </Box>
         <Box isSelected={selectedBox === "trayectoria"} onClick={() => setSelectedBox("trayectoria")}>
-          <img src='./img/trayectoria.png' />
+          <img src={process.env.PUBLIC_URL + '/img/trayectoria.png'} />
         </Box>
         <Box isSelected={selectedBox === "planta"} onClick={() => setSelectedBox("planta")}>
-          <img src='./img/planta.png' />
+          <img src={process.env.PUBLIC_URL + '/img/planta.png'} />
         </Box>
       </HeroBoxes>
       <AboutUs>
@@ -30,7 +30,7 @@ export default function Home() {
                 Briket SA es una empresa 100% nacional que nació en la ciudad de Rosario con más de 65 años de trayectoria y que cuenta con una planta industrial de 25.000 m2 cubiertos desde donde se producen heladeras, freezers y exhibidoras comerciales, logrando en la actualidad posicionarse como una de las marcas líderes de refrigeración en el país.
               </p>
             </div>
-            <img src='./img/foto.png' />
+            <img src={process.env.PUBLIC_URL + '/img/foto.png'} />
           </>
         )}
         {selectedBox === "trayectoria" && (
@@ -41,7 +41,7 @@ export default function Home() {
               Con nuestro amplio lineal de productos y la experiencia de mas de 65 años adaptándonos a las necesidades del consumidor logramos que miles de familias confiaran en nosotros en refrigerar sus alimentos en sus hogares así también como comercios, supermercados, marcas de alimentos y bebidas para conservar y comercializar sus productos.
               </p>
             </div>
-            <img src='./img/foto.png' />
+            <img src={process.env.PUBLIC_URL + '/img/foto.png'} />
           </>
         )}
         {selectedBox === "planta" && (
@@ -52,7 +52,7 @@ export default function Home() {
                 En un predio de 50.000 m2, con una Planta Industrial y oficinas administrativas de 10.000 m2.
               </p>
             </div>
-            <img src='./img/planta-industrial.jpg' />
+            <img src={process.env.PUBLIC_URL + '/img/planta-industrial.jpg'} />
           </>
         )}
       </AboutUs>
@@ -64,31 +64,31 @@ export default function Home() {
       </ProductsCTAContainer>
       <Lineas>
         {selectedLine === "comercial" ? (
-          <img src="./img/productos/comercial-s.png" alt="" />
+          <img src={process.env.PUBLIC_URL + "/img/productos/comercial-s.png"} alt="" />
         ) : (
-          <img onClick={() => setSelectedLine("comercial")} src="./img/productos/comercial.png" alt="" />
+          <img onClick={() => setSelectedLine("comercial")} src={process.env.PUBLIC_URL + "/img/productos/comercial.png"} alt="" />
         )}
         {selectedLine === "hogar" ? (
-          <img src="./img/productos/hogar-s.png" alt="" />
+          <img src={process.env.PUBLIC_URL + "/img/productos/hogar-s.png"} alt="" />
         ) : (
-          <img onClick={() => setSelectedLine("hogar")} src="./img/productos/hogar.png" alt="" />
+          <img onClick={() => setSelectedLine("hogar")} src={process.env.PUBLIC_URL + "/img/productos/hogar.png"} alt="" />
         )}
       </Lineas>
       <Productos>
         {selectedLine === "hogar" && (
           <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=heladera' target='_blank'>
-            <img src="./img/productos/heladeras.png" alt="" />
+            <img src={process.env.PUBLIC_URL + "/img/productos/heladeras.png"} alt="" />
             <h3>Heladeras</h3>
             <div role='button'>&gt;</div>
           </Producto>
         )}
         <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=freezer' target='_blank'>
-          <img src="./img/productos/freezers.png" alt="" />
+          <img src={process.env.PUBLIC_URL + "/img/productos/freezers.png"} alt="" />
           <h3>Freezers</h3>
           <div role='button'>&gt;</div>
         </Producto>
         <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=exhibidora' target='_blank'>
-          <img src="./img/productos/exhibidoras.png" alt="" />
+          <img src={process.env.PUBLIC_URL + "/img/productos/exhibidoras.png"} alt="" />
           <h3>Exhibidoras</h3>
           <div role='button'>&gt;</div>
         </Producto>
@@ -98,7 +98,7 @@ export default function Home() {
       <Postventa>
         <PostventaItem>
           <div>
-            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.000000 279.000000" preserveAspectRatio="xMidYMid meet">
+            <svg version="1.0" viewBox="0 0 279.000000 279.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,279.000000) scale(0.100000,-0.100000)" stroke="none">
               <path d="M1180 2770 c-17 -17 -20 -33 -20 -108 l0 -88 -71 -23 c-39 -13 -101
               -38 -137 -57 l-66 -35 -67 67 c-55 55 -71 66 -91 61 -31 -8 -298 -278 -298
@@ -141,7 +141,7 @@ export default function Home() {
               </g>
             </svg>
           </div>
-          <div style={{backgroundImage:`url("./img/postventa/servicio-tecnico.png")`}}>
+          <div style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/postventa/servicio-tecnico.png")`}}>
             <h4>Servicio Técnico</h4>
             <p>Contamos con cobertura en todo el país, consulta por localidad.</p>
             <a target="_blank" role="button" href="/servicio-tecnico">Consultá acá</a>
@@ -149,7 +149,7 @@ export default function Home() {
         </PostventaItem>
         <PostventaItem>
           <div>
-            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 277.000000 276.000000" preserveAspectRatio="xMidYMid meet">
+            <svg version="1.0" viewBox="0 0 277.000000 276.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,276.000000) scale(0.100000,-0.100000)" stroke="none">
               <path d="M1058 2733 c-14 -16 -55 -79 -92 -140 -37 -62 -68 -113 -69 -113 -1
               0 -60 11 -132 25 -159 31 -180 31 -209 2 -19 -19 -25 -43 -40 -167 -9 -79 -19
@@ -198,14 +198,14 @@ export default function Home() {
               </g>
             </svg>
           </div>
-          <div style={{backgroundImage:`url("./img/postventa/garantia.png")`}}>
+          <div style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/postventa/garantia.png")`}}>
             <h4>Garantía</h4>
             <p>Contamos con cobertura en todo el pais, consulta por localidad.</p>
           </div>
         </PostventaItem>
         <PostventaItem>
           <div>
-            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.000000 277.000000" preserveAspectRatio="xMidYMid meet">
+            <svg version="1.0" viewBox="0 0 251.000000 277.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,277.000000) scale(0.100000,-0.100000)" stroke="none">
               <path d="M936 2756 c-21 -8 -55 -27 -75 -43 -41 -33 -91 -123 -91 -165 0 -26
               -3 -28 -37 -28 -21 0 -56 -9 -78 -19 -80 -37 -115 -101 -115 -211 l0 -70 475
@@ -236,7 +236,7 @@ export default function Home() {
               </g>
             </svg>
           </div>
-          <div style={{backgroundImage:`url("./img/postventa/manuales.png")`}}>
+          <div style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/postventa/manuales.png")`}}>
             <h4>Manuales y fichas técnicas</h4>
             <p>Cada producto cuenta con un manual específico y ficha técnica donde podrás encontrar todas las especificaciones, instalación y solución de problemas frencuentes.</p>
             <p><b>Encontralas en la descripción de cada producto</b></p>
@@ -249,7 +249,6 @@ export default function Home() {
 }
 
 const HeroImage = styled.div`
-  background-image: url("./img/hero.png");
   background-position-y: 100%;
   background-repeat: no-repeat;
   background-size: 100%;

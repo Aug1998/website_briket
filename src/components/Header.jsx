@@ -14,7 +14,7 @@ const Header = (props) => {
             <path d="M3 6.00092H21M3 12.0009H21M3 18.0009H21" stroke="#555555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </MobileNavButton>
-        <Logo src='img/logo.png'/>
+        <Logo src={process.env.PUBLIC_URL + '/img/logo.png'}/>
         <Nav>
           <a href="#">Inicio</a>
           <a href="#nosotros">Nosotros</a>

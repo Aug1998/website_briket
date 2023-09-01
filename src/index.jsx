@@ -18,7 +18,7 @@ const GlobalStyle = css`
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Global styles={GlobalStyle}/>
+      <Global styles={GlobalStyle}/>
       <App />
     </BrowserRouter>
   </React.StrictMode>
