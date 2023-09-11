@@ -8,9 +8,10 @@ export default function Footer() {
       <ContactContainer>
         <h5>Contacto</h5>
         <p>Ov. Lagos 7245 - C.C. N° 3 Suc. 18 - 2000 Rosario - Argentina</p>
-        <p>Administración: 12345</p>
-        <p>Servicio Técnico: 123123</p>
-        <p>Compras: 123123123</p>
+        <p>Administración: </p>
+        <p>Servicio Técnico: </p>
+        <p>Compras: </p>
+        <p>Compras: (0341) 4623535</p>
         <SocialMediaContainer>
           {/* Instagram */}
           <a href="https://instagram.com/briketarg" target="_blank">

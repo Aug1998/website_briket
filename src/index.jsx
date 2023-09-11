@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import App from './App';
 import { Global, css } from '@emotion/react'
 
@@ -17,9 +17,9 @@ const GlobalStyle = css`
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Global styles={GlobalStyle}/>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
