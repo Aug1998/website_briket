@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 export default function Footer() {
   return (
-    <FooterContainer>
+    <FooterContainer id="contacto">
       <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="" />
       <ContactContainer>
         <h5>Contacto</h5>

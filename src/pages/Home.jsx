@@ -9,8 +9,7 @@ export default function Home() {
   return (
     <>
       <HeroImage style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/hero.png")`}} />
-      <a name="nosotros"/>
-      <HeroBoxes>
+      <HeroBoxes id="nosotros">
         <Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
           <img src={process.env.PUBLIC_URL + '/img/empresa.png'} />
         </Box>
@@ -101,8 +100,7 @@ export default function Home() {
           </>
         )}
       </AboutUs>
-      <a name="productos"/>
-      <Label>Productos</Label>
+      <Label id="productos">Productos</Label>
       <ProductsCTAContainer>
         <ProductsBanner>Conocé todos nuestros productos</ProductsBanner>
         <ProductsCTA href='http://www.briketweb.com.ar/v2/index.php' target='_blank'>Click Acá</ProductsCTA>
@@ -130,8 +128,7 @@ export default function Home() {
           <div role='button'>&gt;</div>
         </Producto>
       </Productos>
-      <a name="postventa"/>
-      <Label>Postventa</Label>
+      <Label id="postventa">Postventa</Label>
       <Postventa>
         <PostventaItem>
           <div>
@@ -280,7 +277,6 @@ export default function Home() {
           </div>
         </PostventaItem>
       </Postventa>
-      <a name="contacto"/>
     </>
   )
 }

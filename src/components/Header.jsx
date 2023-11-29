@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from '@emotion/styled'
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const { isMobile } = props;
@@ -7,7 +8,7 @@ const Header = (props) => {
 
   return (
     <>
-    <HeaderWrapper>
+    <HeaderWrapper id="inicio">
       <HeaderInner>
         <MobileNavButton onClick={() => setMobileNavIsOpen(!mobileNavIsOpen)}>
           <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,11 +17,11 @@ const Header = (props) => {
         </MobileNavButton>
         <Logo src={process.env.PUBLIC_URL + '/img/logo.png'}/>
         <Nav>
-          <a href="#">Inicio</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#productos">Productos</a>
-          <a href="#postventa">Postventa</a>
-          <a href="#contacto">Contacto</a>
+          <button onClick={() => document.getElementById('inicio').scrollIntoView() }>Inicio</button>
+          <button onClick={() => document.getElementById('nosotros').scrollIntoView() }>Nosotros</button>
+          <button onClick={() => document.getElementById('productos').scrollIntoView() }>Productos</button>
+          <button onClick={() => document.getElementById('postventa').scrollIntoView() }>Postventa</button>
+          <button onClick={() => document.getElementById('contacto').scrollIntoView() }>Contacto</button>
         </Nav>
       </HeaderInner>
     </HeaderWrapper>
@@ -67,7 +68,9 @@ const HeaderInner = styled.div`
 `
 
 const Nav = styled.div`
-  a {
+  button {
+    all: unset;
+    cursor: pointer;
     font-size: 16px;
     letter-spacing: 1px;
     font-weight: 500;
