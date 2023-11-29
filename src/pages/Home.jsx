@@ -108,16 +108,8 @@ export default function Home() {
         <ProductsCTA href='http://www.briketweb.com.ar/v2/index.php' target='_blank'>Click Acá</ProductsCTA>
       </ProductsCTAContainer>
       <Lineas>
-        {selectedLine === "comercial" ? (
-          <img src={process.env.PUBLIC_URL + "/img/productos/comercial-s.png"} alt="" />
-        ) : (
-          <img onClick={() => setSelectedLine("comercial")} src={process.env.PUBLIC_URL + "/img/productos/comercial.png"} alt="" />
-        )}
-        {selectedLine === "hogar" ? (
-          <img src={process.env.PUBLIC_URL + "/img/productos/hogar-s.png"} alt="" />
-        ) : (
-          <img onClick={() => setSelectedLine("hogar")} src={process.env.PUBLIC_URL + "/img/productos/hogar.png"} alt="" />
-        )}
+        <LineasImg isSelected={selectedLine === "comercial"} onClick={() => setSelectedLine("comercial")} src={process.env.PUBLIC_URL + "/img/productos/comercial.png"} alt="" />
+        <LineasImg isSelected={selectedLine === "hogar"} onClick={() => setSelectedLine("hogar")} src={process.env.PUBLIC_URL + "/img/productos/hogar.png"} alt="" />
       </Lineas>
       <Productos>
         {selectedLine === "hogar" && (
@@ -312,7 +304,7 @@ const HeroBoxes = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: -130px;
-  padding: 0 14vw;
+  padding: 0 10vw;
   @media only screen and (max-width: 800px) {
     padding: 0 8vw;
     margin-top: -50px;
@@ -349,7 +341,7 @@ const Box = styled.div`
 `
 
 const AboutUs = styled.div`
-  padding: 100px 16vw;
+  padding: 100px 10vw 40px;
   display: flex;
   width: 100%;
   align-items: center;
@@ -362,18 +354,18 @@ const AboutUs = styled.div`
       margin-bottom: 18px;
       text-transform: uppercase;
       font-weight: 600;
-      font-size: 2.3em;
+      font-size: 2em;
       color: #2c3a77;
     }
     p{
-      max-width: 44ch;
-      font-size: 1.2em;
+      max-width: 60ch;
+      font-size: 0.9em;
       line-height: 1.5em;
    
     }
   }
   img{
-    width: 30vw;
+    width: 36vw;
     max-width: 540px;
   }
   @media only screen and (max-width: 800px) {
@@ -467,21 +459,25 @@ const Lineas = styled.div`
   align-items: center;
   justify-content: center;
   gap: 80px;
-  padding: 70px 16vw;
-  img {
-    max-width: 480px;
-    cursor: pointer;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-  }
+  padding: 0 16vw;
+  height: 580px;
+  box-sizing: border-box;
   @media only screen and (max-width: 800px) {
     padding: 70px 8vw;
     gap: 30px;
-    img {
-      max-width: 50%;
-    }
+  }
+`
+
+const LineasImg = styled.img`
+  max-width: ${props => props.isSelected ? "430px" : "400px"};
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  transition: all 0.2s;
+  @media only screen and (max-width: 800px) {
+    max-width: 50%;
   }
 `
 

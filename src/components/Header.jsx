@@ -54,7 +54,7 @@ const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16vw;
+  padding: 0 10vw;
   background-color: white;
   z-index: 99;
   @media only screen and (max-width: 800px) {
