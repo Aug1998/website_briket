@@ -14,11 +14,11 @@ export default function Home() {
         <Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
           <img src={process.env.PUBLIC_URL + '/img/empresa.png'} />
         </Box>
-        <Box isSelected={selectedBox === "trayectoria"} onClick={() => setSelectedBox("trayectoria")}>
-          <img src={process.env.PUBLIC_URL + '/img/trayectoria.png'} />
-        </Box>
         <Box isSelected={selectedBox === "planta"} onClick={() => setSelectedBox("planta")}>
           <img src={process.env.PUBLIC_URL + '/img/planta.png'} />
+        </Box>
+        <Box isSelected={selectedBox === "nosotros"} onClick={() => setSelectedBox("nosotros")}>
+          <img src={process.env.PUBLIC_URL + '/img/trayectoria.png'} />
         </Box>
       </HeroBoxes>
       <AboutUs>
@@ -27,32 +27,77 @@ export default function Home() {
             <div>
               <h3>Nuestra empresa</h3>
               <p>
-                Briket SA es una empresa 100% nacional que nació en la ciudad de Rosario con más de 65 años de trayectoria y que cuenta con una planta industrial de 25.000 m2 cubiertos desde donde se producen heladeras, freezers y exhibidoras comerciales, logrando en la actualidad posicionarse como una de las marcas líderes de refrigeración en el país.
+                Somos una empresa especializada en la fabricación de 
+                electrodomésticos con una tradición de casi 70 años en el mercado. A lo largo de la historia, hemos demostrado consistentemente la calidad de nuestros productos, así como una sólida presencia en el mercado, ofreciendo a los consumidores argentinos alternativas confiables y asequibles. 
+                <br/>
+                <br/>
+                Nuestros productos se destacan por su nobleza, excelentes prestaciones y una relación calidad-precio inigualable.
+                <br/>
+                <br/>
+                Nuestra marca se caracteriza por su enfoque en la confianza, la tradición y las implicidad. Nos esforzamos por proporcionar soluciones funcionales y elegantes para consumidores que valoran la practicidad por encima de la sofisticación y la elegancia por encima del vanguardismo. Con el paso de los años, hemos dedicado nuestros esfuerzos al desarrollo de productos exclusivos y novedosos. 
+                <br/>
+                <br/>
+                Además de servir al mercado de consumo, también atendemos al segmento comercial/industrial con diversas líneas de productos. En este ámbito, nos enfocamos en transmitir confianza, seguridad en el funcionamiento y practicidad en el uso de nuestros productos. Dado que se trata de bien es de uso, aseguramos una relación óptima entre precio y prestación.
               </p>
             </div>
             <img src={process.env.PUBLIC_URL + '/img/foto.png'} />
           </>
         )}
-        {selectedBox === "trayectoria" && (
-          <>
-            <div>
-              <h3>Trayectoria</h3>
-              <p>
-              Con nuestro amplio lineal de productos y la experiencia de mas de 65 años adaptándonos a las necesidades del consumidor logramos que miles de familias confiaran en nosotros en refrigerar sus alimentos en sus hogares así también como comercios, supermercados, marcas de alimentos y bebidas para conservar y comercializar sus productos.
-              </p>
-            </div>
-            <img src={process.env.PUBLIC_URL + '/img/foto.png'} />
-          </>
-        )}
-        {selectedBox === "planta" && (
+         {selectedBox === "planta" && (
           <>
             <div>
               <h3>Planta industrial</h3>
               <p>
-                En un predio de 50.000 m2, con una Planta Industrial y oficinas administrativas de 10.000 m2.
+                En nuestras instalaciones, que abarcan más de 50,000 metros cuadrados, invertimos continuamente en investigación y desarrollo (I+D) con el objetivo de diseñar productos modernos y eficientes.
+                <br/>
+                <br/>
+                Nuestra empresa ha cumplido rigurosamente con los protocolos internacionales destinados a la reducción de la huella de carbono.
+                <br/>
+                <br/>
+                En el marco del <b>Protocolo de Montreal</b>, hemos eliminado gases de nuestros productos que directamente afectaban la capa de ozono, reemplazándolos por compuestos 100% ecológicos y naturales. Por otro lado, en relación al <b>Protocolo de Kyoto</b>, hemos eliminado gases presentes en nuestros productos que contribuían al calentamiento global, sustituyendolos también por alternativas amigables con el medio ambiente.
+                <br/>
+                <br/>
+                Briket ha implementado un importante avance al incorporar Ciclopentano como agente expansor de la espuma aislante, eliminando por completo el uso de CFCs. Además, nuestros equipos operan con el gas ecológico R-600 y R-290.
+                <br/>
+                <br/>
+                Estos esfuerzos demuestran el firme compromiso de Briket con la preservación de la ecología, el respeto por la naturaleza y la convicción de que todos podemos contribuir a hacer del mundo un lugar mejor.
               </p>
             </div>
             <img src={process.env.PUBLIC_URL + '/img/planta-industrial.jpg'} />
+          </>
+        )}
+        {selectedBox === "nosotros" && (
+          <>
+            <div>
+              <h3>Nosotros</h3>
+                <p>
+                <b>Misión:</b> Nuestra misión es proporcionar productos de calidad y confiabilidad que satisfagan las necesidades de nuestros clientes en el mercado de electrodomésticos. Nos esforzamos por ofrecer soluciones innovadoras y funcionales para el hogar y los negocios. Nos comprometemos a brindar un servicio excepcional al cliente y a mantenernos a la vanguardia de las demandas del mercado.
+                <br/>
+                <br/>
+                <b>Visión:</b> Aspiramos a convertirnos en la marca líder en electrodomésticos en Argentina, reconocida por la calidad de nuestros productos, la satisfacción del cliente y el compromiso con la innovación. Buscamos expandir nuestra presencia en el mercado nacional y consolidarnos como referentes en la industria de electrodomésticos, ofreciendo una amplia gama de productos confiables y adaptados a las cambiantes necesidades de los consumidores.
+                <br/>
+                <br/>
+                <b>Valores:</b>
+                <ul>
+                  <li>
+                    <u>Calidad y confiabilidad</u>: Nos esforzamos por superar las expectativas de nuestros clientes, proporcionando productos de alta calidad y confiabilidad que les brinden una experiencia satisfactoria.
+                  </li>
+                  <li>
+                    <u>Orientación al cliente</u>: Ponemos a nuestros clientes en el centro de todo lo que hacemos. Escuchamos y comprendemos sus necesidades para ofrecer soluciones adecuadas y un servicio excepcional.
+                  </li>
+                  <li>
+                    <u>Innovación</u>: Nos mantenemos actualizados con las últimas tendencias y exigencias del mercado. Buscamos constantemente nuevas formas de mejorar nuestros productos y procesos para mantenernos competitivos y relevantes.
+                  </li>
+                  <li>
+                    <u>Integridad y ética</u>: Actuamos con honestidad, transparencia y responsabilidad en todas nuestras operaciones y relaciones comerciales.
+                  </li>
+                  <li>
+                    <u>Compromiso con la comunidad</u>: Contribuimos al desarrollo sostenible de la comunidad en la que operamos, promoviendo prácticas socialmente responsables y respaldando iniciativas locales.
+                  </li>
+                </ul>
+              </p>
+            </div>
+            <img src={process.env.PUBLIC_URL + '/img/foto.png'} />
           </>
         )}
       </AboutUs>
@@ -284,10 +329,10 @@ const Box = styled.div`
   justify-content:center;
   padding: 50px 0;
   transform: ${props => (props.isSelected ? "scale(1.1)" : "")};
-  background-color: ${props => (props.isSelected ? "#1f3664" : "#e8eef2")};
+  background-color: ${props => (props.isSelected ? "#2c3a77" : "#e8eef2")};
   transition: 0.2s;
   &:hover{
-    background-color: #1f3664;
+    background-color: #2c3a77;
     img {
       filter: brightness(100);
     }
@@ -318,12 +363,13 @@ const AboutUs = styled.div`
       text-transform: uppercase;
       font-weight: 600;
       font-size: 2.3em;
-      color: #1f3664;
+      color: #2c3a77;
     }
     p{
       max-width: 44ch;
       font-size: 1.2em;
       line-height: 1.5em;
+   
     }
   }
   img{
@@ -357,7 +403,7 @@ const Label = styled.h3`
   content: "";
   width: 40px;
   height: 4px;
-  background-color: #1f3664;
+  background-color: #2c3a77;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -382,10 +428,10 @@ const ProductsBanner = styled.h3`
  text-transform: uppercase;
  width: 100%;
  padding: 60px 0;
- background-color: #0033a1;
+ background-color: #d3d7d6;
  font-weight: 600;
  font-size: 2.8em;
- color: white;
+ color: black;
  position: relative;
  text-align: center;
   @media only screen and (max-width: 800px) {
@@ -397,7 +443,7 @@ const ProductsCTA = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   padding: 12px 30px;
-  background-color: #1f3664;
+  background-color: #2c3a77;
   border-radius: 10px;
   font-weight: 600;
   font-size: 2em;
@@ -408,7 +454,7 @@ const ProductsCTA = styled.a`
   transition: 0.3s;
   cursor: pointer;
   &:hover{
-    background-color: #2a4479;
+    background-color: #355594;
     transform: translateY(-4px);
   }
   @media only screen and (max-width: 800px) {
@@ -493,7 +539,7 @@ const Producto = styled.a`
 `
 
 const Postventa = styled.div`
-  background-color: #1f3664;
+  background-color: #2c3a77;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -509,7 +555,7 @@ const PostventaItem = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #1f3664;
+  background-color: #2c3a77;
   div:first-of-type{
     background-color: white;
     width: 140px;
@@ -545,7 +591,7 @@ const PostventaItem = styled.div`
     }
   }
   a {
-    background-color: #1f3664;
+    background-color: #2c3a77;
     color: white;
     text-decoration: none;
     padding: 10px 20px;

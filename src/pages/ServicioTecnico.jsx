@@ -30,7 +30,7 @@ const PageContainer = styled.div`
     line-height: 1.6em;
     a {
       text-decoration: none;
-      background-color: #1f3664;
+      background-color: #2c3a77;
       border-radius: 6px;
       color: white;
       padding: 4px 10px;

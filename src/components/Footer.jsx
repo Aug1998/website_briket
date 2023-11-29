@@ -7,11 +7,8 @@ export default function Footer() {
       <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="" />
       <ContactContainer>
         <h5>Contacto</h5>
-        <p>Ov. Lagos 7245 - C.C. N° 3 Suc. 18 - 2000 Rosario - Argentina</p>
-        <p>Administración: </p>
-        <p>Servicio Técnico: </p>
-        <p>Compras: </p>
-        <p>Compras: (0341) 4623535</p>
+        <p>+54 341 558 3434</p>
+        <p>briketarg@gmail.com</p>
         <SocialMediaContainer>
           {/* Instagram */}
           <a href="https://instagram.com/briketarg" target="_blank">
@@ -53,7 +50,7 @@ export default function Footer() {
 }
 
 const FooterContainer = styled.div`
-  background-color: #1a1a1a;
+  background-color: #303030;
   padding: 40px 14vw;
   display: flex;
   justify-content: space-between;
