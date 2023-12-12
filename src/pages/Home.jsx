@@ -113,7 +113,7 @@ export default function Home() {
       <Label id="productos">Productos</Label>
       <ProductsCTAContainer>
         <ProductsBanner>Conocé todos nuestros productos</ProductsBanner>
-        <ProductsCTA href='http://www.briketweb.com.ar/v2/index.php' target='_blank'>Click Acá</ProductsCTA>
+        <ProductsCTA href='https://briket.mitiendanube.com/productos/' target='_blank'>Click Acá</ProductsCTA>
       </ProductsCTAContainer>
       <Lineas>
         <LineasImg 
