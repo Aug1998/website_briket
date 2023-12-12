@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <>
       <HeroSlider imageUrlList={['/img/hero/hero1.png', '/img/hero/hero2.png', '/img/hero/hero3.png']} />
+
       <HeroBoxes id="nosotros">
         <Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
           <img src={process.env.PUBLIC_URL + '/img/aboutUs/empresa.png'} />
@@ -24,6 +25,7 @@ export default function Home() {
           <h4>Nostros</h4>
         </Box>
       </HeroBoxes>
+
       <AboutUs>
         {selectedBox === "empresa" && (
           <>
@@ -104,6 +106,7 @@ export default function Home() {
           </>
         )}
       </AboutUs>
+
       <Label id="productos">Productos</Label>
       <ProductsCTAContainer>
         <ProductsBanner>Conocé todos nuestros productos</ProductsBanner>
@@ -113,35 +116,53 @@ export default function Home() {
         <LineasImg 
           isSelected={selectedLine === "hogar"} 
           onClick={() => setSelectedLine("hogar")} 
-          src={process.env.PUBLIC_URL + `/img/productos/hogar.png`} 
+          src={process.env.PUBLIC_URL + `/img/lineas/hogar.png`} 
           alt="" 
         />
         <LineasImg 
           isSelected={selectedLine === "comercial"} 
           onClick={() => setSelectedLine("comercial")} 
-          src={process.env.PUBLIC_URL + `/img/productos/comercial.png`} 
+          src={process.env.PUBLIC_URL + `/img/lineas/comercial.png`} 
           alt="" 
         />
       </Lineas>
+
       <Productos>
         {selectedLine === "hogar" && (
-          <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=heladera' target='_blank'>
-            <img src={process.env.PUBLIC_URL + "/img/productos/heladeras.png"} alt="" />
-            <h3>Heladeras</h3>
-            <div role='button'>&gt;</div>
-          </Producto>
+          <>
+            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=heladera' target='_blank'>
+              <img src={process.env.PUBLIC_URL + "/img/productos/heladera.png"} alt="" />
+              <h3>Heladeras</h3>
+              <div role='button'>&gt;</div>
+            </Producto>
+            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=freezer' target='_blank'>
+              <img src={process.env.PUBLIC_URL + "/img/productos/freezer-hogar.png"} alt="" />
+              <h3>Freezers</h3>
+              <div role='button'>&gt;</div>
+            </Producto>
+            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=exhibidora' target='_blank'>
+              <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-hogar.png"} alt="" />
+              <h3>Exhibidoras</h3>
+              <div role='button'>&gt;</div>
+            </Producto>
+          </>
         )}
-        <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=freezer' target='_blank'>
-          <img src={process.env.PUBLIC_URL + "/img/productos/freezers.png"} alt="" />
-          <h3>Freezers</h3>
-          <div role='button'>&gt;</div>
-        </Producto>
-        <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=exhibidora' target='_blank'>
-          <img src={process.env.PUBLIC_URL + "/img/productos/exhibidoras.png"} alt="" />
-          <h3>Exhibidoras</h3>
-          <div role='button'>&gt;</div>
-        </Producto>
+        {selectedLine === "comercial" && (
+          <>
+            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=freezer' target='_blank'>
+              <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-comercial.png"} alt="" />
+              <h3>Freezers</h3>
+              <div role='button'>&gt;</div>
+            </Producto>
+            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=exhibidora' target='_blank'>
+              <img src={process.env.PUBLIC_URL + "/img/productos/freezer-comercial.png"} alt="" />
+              <h3>Exhibidoras</h3>
+              <div role='button'>&gt;</div>
+            </Producto>
+          </>
+        )}
       </Productos>
+
       <Label id="postventa">Postventa</Label>
       <Postventa>
         <PostventaItem>
@@ -478,61 +499,57 @@ const LineasImg = styled.img`
   -moz-user-drag: none;
   -o-user-drag: none;
   transition: all 0.2s;
-  @media only screen and (max-width: 1024px) {
-    max-width: 50%;
-  }
 `
 
 const Productos = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 0 40px;
-  gap: 50px;
+  padding: 50px 12vw 40px;
+  gap: 20px;
   background-color: #f4f5f9;
-  @media only screen and (max-width: 1024px) {
-    flex-direction: column;
-    gap: 20px;
-  }
 `
 
 const Producto = styled.a`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #f4f5f9;
-  gap: 10px;
+  background-color: #d3d7d6;
+  width: 100%;
+  padding: 40px 70px;
   cursor: pointer;
   transition: 0.3s;
   text-decoration: none;
   &:hover{
     filter: brightness(108%);
+    & > div {
+      background-color: #355594;
+      transform: translateX(0px);
+    }
   }
   h3 {
     text-transform: uppercase;
-    color: #0033a1;
-    font-size: 1.6em;
-    margin-top: 2px;
+    color: black;
+    font-size: 2.6em;
+    font-weight: 400;
   }
   img {
-    max-width: 400px;
+    max-height: 200px;
   }
   div {
+    margin-left: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0033a1;
-    border-radius: 50%;
+    background-color: #bfbfbf;
     width: 36px;
-    height: 36px;
+    height: 60px;
     color: white;
     font-size: 2em;
     margin-bottom: 16px;
-  }
-  @media only screen and (max-width: 1024px) {
-    flex-direction: column;
-    gap: 20px;
+    transform: translateX(-10px);
+    transition: 0.3s;
   }
 `
 
