@@ -52,11 +52,10 @@ const SliderContainer = styled.div`
 
 const SliderItem = styled.div`
   height: 100%;
-  width: 100%;
+  width: 100vw;
   display: flex!important;
   overflow: hidden;
   img {
-    width: ${props => (props.viewportWidth > 1024) ? "100%" : ""};
-    height: ${props => (props.viewportWidth > 1024) ? "" : "100%"};
+    width: 100%;
   }
 `

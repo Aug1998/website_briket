@@ -6,10 +6,16 @@ export default function Home() {
 
   const [selectedBox, setSelectedBox] = useState("empresa")
   const [selectedLine, setSelectedLine] = useState("comercial")
+  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
+  const heroImagesUrls = ['/img/hero/hero1.png', '/img/hero/hero2.png', '/img/hero/hero3.png'];
+  const heroMobileImagesUrls = ['/img/hero/mobile-hero1.png', '/img/hero/mobile-hero2.png', '/img/hero/mobile-hero3.png'];
+
+
+  
   return (
     <>
-      <HeroSlider imageUrlList={['/img/hero/hero1.png', '/img/hero/hero2.png', '/img/hero/hero3.png']} />
+      <HeroSlider imageUrlList={vw > 1024 ? heroImagesUrls : heroMobileImagesUrls} />
 
       <HeroBoxes id="nosotros">
         <Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
@@ -318,13 +324,16 @@ export default function Home() {
 
 
 const HeroBoxes = styled.div`
-  width: 100%;
+  width: 100vw;
   background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 12vw;
   margin: 60px 0;
+  @media only screen and (max-width: 1024px) {
+    padding: 0 20px;
+  }
 `
 
 const Box = styled.div`
@@ -351,14 +360,23 @@ const Box = styled.div`
   h4 {
     font-size: 1.4rem;
     color: #00347f;
+    text-align: center;
   }
   &:hover{
     background-color: #d3d7d6;
   }
   @media only screen and (max-width: 1024px) {
-    width: 25vw;
-    height: 21vw;
     padding: 16px;
+    width: 30%;
+    max-height: unset;
+    height: 184px;
+    img {
+      width: 90px;
+      height: unset;
+    }
+    h4 {
+      font-size: 1.2rem;
+    }
   }
 `
 
@@ -391,7 +409,8 @@ const AboutUs = styled.div`
     max-width: 540px;
   }
   @media only screen and (max-width: 1024px) {
-    padding: 80px 8vw;
+    justify-content: center;
+    padding: 20px 20px;
     img{
       display: none;
     }
@@ -473,6 +492,7 @@ const ProductsCTA = styled.a`
     transform: translateY(-4px);
   }
   @media only screen and (max-width: 1024px) {
+    margin-top: -26px;
     font-size: 1.6em;
   }
 `
@@ -485,20 +505,27 @@ const Lineas = styled.div`
   padding: 0 16vw;
   height: 580px;
   box-sizing: border-box;
+  width: 100vw;
   @media only screen and (max-width: 1024px) {
-    padding: 70px 8vw;
     gap: 30px;
+    padding: 0;
+    height: 460px;
   }
 `
 
 const LineasImg = styled.img`
-  max-width: ${props => props.isSelected ? "420px" : "380px"};
+  width: 50%;
+  overflow-x: hidden;
   cursor: pointer;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
   transition: all 0.2s;
+  transform: ${props => props.isSelected ? "scale(1.1)" : ""};
+  @media only screen and (max-width: 1024px) {
+    width: 40%;
+  }
 `
 
 const Productos = styled.div`
@@ -538,7 +565,6 @@ const Producto = styled.a`
     max-height: 200px;
   }
   div {
-    margin-left: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -548,8 +574,19 @@ const Producto = styled.a`
     color: white;
     font-size: 2em;
     margin-bottom: 16px;
+    margin-left: 150px;
     transform: translateX(-10px);
     transition: 0.3s;
+    @media only screen and (max-width: 1024px) {
+      margin-bottom: 0px;
+      margin-left: 0px;
+      transform: translateX(0px);
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 12px;
   }
 `
 
@@ -571,19 +608,24 @@ const PostventaItem = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: #2c3a77;
+  p{
+    color: #3f3f3f;
+    font-size: 0.9em;
+  }
   div:first-of-type{
     background-color: white;
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 99;
     svg {
-      max-width: 100px;
-      max-height: 90px;
+      max-width: 90px;
+      max-height: 80px;
       fill: #011689;
+      transform: translate(1px, -1px);
     }
   }
   div:last-of-type{
@@ -591,17 +633,18 @@ const PostventaItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
-    gap: 30px;
+    gap: 40px;
     width: 360px;
     height: 410px;
     margin-top: -70px;
-    padding: 80px 30px 30px 30px;
+    padding: 100px 30px 30px 30px;
     h4 {
-      text-transform: uppercase;
-      font-size: 1.6em;
       color: #0033a1;
+      text-transform: uppercase;
+      font-size: 1.5em;
+      font-weight: 700;
       line-height: 1.2em;
     }
   }
