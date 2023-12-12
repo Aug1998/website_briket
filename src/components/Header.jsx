@@ -3,8 +3,8 @@ import styled from '@emotion/styled'
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
-  const { isMobile } = props;
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false)
+  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
   return (
     <>
@@ -25,13 +25,13 @@ const Header = (props) => {
         </Nav>
       </HeaderInner>
     </HeaderWrapper>
-      {isMobile && (
+      {vw <= 1024 && (
         <MobileNav isOpen={mobileNavIsOpen}>
-          <a href="#">Inicio</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#productos">Productos</a>
-          <a href="#postventa">Postventa</a>
-          <a href="#contacto">Contacto</a>
+          <button onClick={() => document.getElementById('inicio').scrollIntoView() }>Inicio</button>
+          <button onClick={() => document.getElementById('nosotros').scrollIntoView() }>Nosotros</button>
+          <button onClick={() => document.getElementById('productos').scrollIntoView() }>Productos</button>
+          <button onClick={() => document.getElementById('postventa').scrollIntoView() }>Postventa</button>
+          <button onClick={() => document.getElementById('contacto').scrollIntoView() }>Contacto</button>
         </MobileNav>
       )}
     </>
@@ -93,28 +93,31 @@ const MobileNav = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   top: -172px;
   background-color: white;
   width: 100%;
   padding: 0px 50px 20px;
   z-index: 98;
   transition: all 0.3s;
-  transform: ${props => props.isOpen? "translateY(282px)" : ""};
-  a {
-    font-size: 14px;
+  transform: ${props => props.isOpen ? "translateY(282px)" : ""};
+  button {
+    all: unset;
+    cursor: pointer;
+    font-size: 16px;
     letter-spacing: 1px;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
     color: black;
     &:not(:last-child) {
-      margin-bottom: 12px;
+      margin-right: 32px;
     }
     &:hover {
       text-decoration: underline;
     }
   }
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: 1024px) {
     display: none;
   }
 `
@@ -129,7 +132,7 @@ const MobileNavButton = styled.button`
   outline: none;
   position: absolute;
   left: 6%;
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: 1024px) {
     display: none;
   }
 `

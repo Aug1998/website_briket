@@ -3,15 +3,12 @@ import styled from '@emotion/styled'
 import HeroSlider from '../components/HeroSlider'
 
 export default function Home() {
-
   const [selectedBox, setSelectedBox] = useState("empresa")
   const [selectedLine, setSelectedLine] = useState("comercial")
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
   const heroImagesUrls = ['/img/hero/hero1.png', '/img/hero/hero2.png', '/img/hero/hero3.png'];
   const heroMobileImagesUrls = ['/img/hero/mobile-hero1.png', '/img/hero/mobile-hero2.png', '/img/hero/mobile-hero3.png'];
-
-
   
   return (
     <>

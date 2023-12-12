@@ -18,9 +18,8 @@ function App() {
     <WhatsappFloatingButton />
     <Header isMobile={isMobile} />
     <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/briket" element={<Home/>} />
       <Route path="/servicio-tecnico" element={<ServicioTecnico/>} />
+      <Route path="/" element={<Home/>} />
     </Routes>
     <Footer />
     </>

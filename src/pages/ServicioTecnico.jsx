@@ -7,7 +7,7 @@ export default function ServicioTecnico() {
 
   return (
     <PageContainer>
-      <img src="./img/argentina.png" alt="" />
+      <img src={process.env.PUBLIC_URL + "/img/argentina.png"} alt="" />
       <h2>Para solicitar {isMobile && <br></br>}un servicio {!isMobile && <br></br>} técnico, {isMobile && <br></br>}<a href="http://200.55.245.33:3000/" target='_blank'>ingrese aquí</a></h2>
     </PageContainer>
   )
