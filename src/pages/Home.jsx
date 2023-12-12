@@ -110,8 +110,18 @@ export default function Home() {
         <ProductsCTA href='http://www.briketweb.com.ar/v2/index.php' target='_blank'>Click Acá</ProductsCTA>
       </ProductsCTAContainer>
       <Lineas>
-        <LineasImg isSelected={selectedLine === "comercial"} onClick={() => setSelectedLine("comercial")} src={process.env.PUBLIC_URL + "/img/productos/comercial.png"} alt="" />
-        <LineasImg isSelected={selectedLine === "hogar"} onClick={() => setSelectedLine("hogar")} src={process.env.PUBLIC_URL + "/img/productos/hogar.png"} alt="" />
+        <LineasImg 
+          isSelected={selectedLine === "hogar"} 
+          onClick={() => setSelectedLine("hogar")} 
+          src={process.env.PUBLIC_URL + `/img/productos/hogar.png`} 
+          alt="" 
+        />
+        <LineasImg 
+          isSelected={selectedLine === "comercial"} 
+          onClick={() => setSelectedLine("comercial")} 
+          src={process.env.PUBLIC_URL + `/img/productos/comercial.png`} 
+          alt="" 
+        />
       </Lineas>
       <Productos>
         {selectedLine === "hogar" && (
@@ -293,7 +303,7 @@ const HeroBoxes = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 12vw;
-  margin-top: 60px;
+  margin: 60px 0;
 `
 
 const Box = styled.div`
@@ -313,6 +323,7 @@ const Box = styled.div`
   background-color: ${props => (props.isSelected ? "#d3d7d6" : "#e8eef2")};
   transition: 0.2s;
   z-index: 99;
+  user-select: none;
   img {
     height: 100%;
   }
@@ -331,7 +342,7 @@ const Box = styled.div`
 `
 
 const AboutUs = styled.div`
-  padding: 80px 12vw;
+  padding: 0 12vw;
   display: flex;
   width: 100%;
   align-items: center;
@@ -381,7 +392,7 @@ const Label = styled.h3`
  padding: 0 12vw 6px;
  position: relative;
  letter-spacing: 2px;
- margin: 0 0 30px 0;
+ margin: 60px 0 30px;
  &::before {
   content: "";
   width: 60px;
@@ -449,7 +460,7 @@ const Lineas = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 100px;
   padding: 0 16vw;
   height: 580px;
   box-sizing: border-box;
@@ -460,7 +471,7 @@ const Lineas = styled.div`
 `
 
 const LineasImg = styled.img`
-  max-width: ${props => props.isSelected ? "430px" : "400px"};
+  max-width: ${props => props.isSelected ? "420px" : "380px"};
   cursor: pointer;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
