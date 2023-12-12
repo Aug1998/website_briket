@@ -10,7 +10,7 @@ import ServicioTecnico from "./pages/ServicioTecnico";
 
 function App() {
 
-  const mql = window.matchMedia('(max-width: 800px)');
+  const mql = window.matchMedia('(max-width: 1024px)');
   let isMobile = mql.matches;
 
   return (

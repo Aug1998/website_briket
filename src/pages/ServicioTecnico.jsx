@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 export default function ServicioTecnico() {
-  const mql = window.matchMedia('(max-width: 800px)');
+  const mql = window.matchMedia('(max-width: 1024px)');
   let isMobile = mql.matches;
 
   return (
@@ -41,7 +41,7 @@ const PageContainer = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     padding: 40px 20px 60px;
     img{
       height: 600px;

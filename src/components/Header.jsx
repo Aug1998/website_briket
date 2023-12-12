@@ -55,10 +55,10 @@ const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10vw;
+  padding: 0 12vw;
   background-color: white;
   z-index: 99;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     padding: 0 0;
     justify-content: center;
   }
@@ -84,7 +84,7 @@ const Nav = styled.div`
       text-decoration: underline;
     }
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     display: none;
   }
 `

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
+import HeroSlider from '../components/HeroSlider'
 
 export default function Home() {
 
@@ -8,16 +9,19 @@ export default function Home() {
 
   return (
     <>
-      <HeroImage style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/hero.png")`}} />
+      <HeroSlider imageUrlList={['/img/hero/hero1.png', '/img/hero/hero2.png', '/img/hero/hero3.png']} />
       <HeroBoxes id="nosotros">
         <Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
-          <img src={process.env.PUBLIC_URL + '/img/empresa.png'} />
+          <img src={process.env.PUBLIC_URL + '/img/aboutUs/empresa.png'} />
+          <h4>Nuestra Empresa</h4>
         </Box>
         <Box isSelected={selectedBox === "planta"} onClick={() => setSelectedBox("planta")}>
-          <img src={process.env.PUBLIC_URL + '/img/planta.png'} />
+          <img src={process.env.PUBLIC_URL + '/img/aboutUs/planta.png'} />
+          <h4>Planta Industrial</h4>
         </Box>
         <Box isSelected={selectedBox === "nosotros"} onClick={() => setSelectedBox("nosotros")}>
-          <img src={process.env.PUBLIC_URL + '/img/trayectoria.png'} />
+          <img src={process.env.PUBLIC_URL + '/img/aboutUs/nosotros.png'} />
+          <h4>Nostros</h4>
         </Box>
       </HeroBoxes>
       <AboutUs>
@@ -281,17 +285,6 @@ export default function Home() {
   )
 }
 
-const HeroImage = styled.div`
-  background-position-y: 100%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: calc(100vh - 110px);
-  background-color: gray;
-  @media only screen and (max-width: 800px) {
-    height: 350px;
-    background-size: cover;
-  }
-`
 
 const HeroBoxes = styled.div`
   width: 100%;
@@ -299,12 +292,8 @@ const HeroBoxes = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: -130px;
-  padding: 0 10vw;
-  @media only screen and (max-width: 800px) {
-    padding: 0 8vw;
-    margin-top: -50px;
-  }
+  padding: 0 12vw;
+  margin-top: 60px;
 `
 
 const Box = styled.div`
@@ -314,22 +303,27 @@ const Box = styled.div`
   max-width: 330px;
   max-height: 260px;
   display: flex;
-  justify-content:center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 16px;
   padding: 50px 0;
   transform: ${props => (props.isSelected ? "scale(1.1)" : "")};
-  background-color: ${props => (props.isSelected ? "#2c3a77" : "#e8eef2")};
+  background-color: ${props => (props.isSelected ? "#d3d7d6" : "#e8eef2")};
   transition: 0.2s;
-  &:hover{
-    background-color: #2c3a77;
-    img {
-      filter: brightness(100);
-    }
-  }
+  z-index: 99;
   img {
     height: 100%;
-    filter: ${props => (props.isSelected ? "brightness(100)" : "")};
   }
-  @media only screen and (max-width: 800px) {
+  h4 {
+    font-size: 1.4rem;
+    color: #00347f;
+  }
+  &:hover{
+    background-color: #d3d7d6;
+  }
+  @media only screen and (max-width: 1024px) {
     width: 25vw;
     height: 21vw;
     padding: 16px;
@@ -337,7 +331,7 @@ const Box = styled.div`
 `
 
 const AboutUs = styled.div`
-  padding: 100px 10vw 40px;
+  padding: 80px 12vw;
   display: flex;
   width: 100%;
   align-items: center;
@@ -364,7 +358,7 @@ const AboutUs = styled.div`
     width: 36vw;
     max-width: 540px;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     padding: 80px 8vw;
     img{
       display: none;
@@ -384,20 +378,21 @@ const Label = styled.h3`
  text-transform: uppercase;
  font-weight: 600;
  font-size: 1.8em;
- padding: 0 16vw 4px;
+ padding: 0 12vw 6px;
  position: relative;
- margin: 40px 0 30px;
+ letter-spacing: 2px;
+ margin: 0 0 30px 0;
  &::before {
   content: "";
-  width: 40px;
-  height: 4px;
+  width: 60px;
+  height: 2px;
   background-color: #2c3a77;
   position: absolute;
   left: 0;
   bottom: 0;
-  margin: 0 16vw;
+  margin: 0 12vw;
  }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     padding: 0 8vw 4px;
     font-size: 1.6em;
     &::before {
@@ -422,7 +417,7 @@ const ProductsBanner = styled.h3`
  color: black;
  position: relative;
  text-align: center;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     font-size: 2em;
   }
 `
@@ -445,7 +440,7 @@ const ProductsCTA = styled.a`
     background-color: #355594;
     transform: translateY(-4px);
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     font-size: 1.6em;
   }
 `
@@ -458,7 +453,7 @@ const Lineas = styled.div`
   padding: 0 16vw;
   height: 580px;
   box-sizing: border-box;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     padding: 70px 8vw;
     gap: 30px;
   }
@@ -472,7 +467,7 @@ const LineasImg = styled.img`
   -moz-user-drag: none;
   -o-user-drag: none;
   transition: all 0.2s;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     max-width: 50%;
   }
 `
@@ -484,7 +479,7 @@ const Productos = styled.div`
   padding: 50px 0 40px;
   gap: 50px;
   background-color: #f4f5f9;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     flex-direction: column;
     gap: 20px;
   }
@@ -524,7 +519,7 @@ const Producto = styled.a`
     font-size: 2em;
     margin-bottom: 16px;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     flex-direction: column;
     gap: 20px;
   }
@@ -537,7 +532,7 @@ const Postventa = styled.div`
   justify-content: center;
   gap: 60px;
   padding: 60px 0;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     flex-direction: column;
   }
 `
