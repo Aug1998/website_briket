@@ -133,17 +133,17 @@ export default function Home() {
       <Productos>
         {selectedLine === "hogar" && (
           <>
-            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=heladera' target='_blank'>
+            <Producto href='https://briket.mitiendanube.com/linea-hogar/heladeras/' target='_blank'>
               <img src={process.env.PUBLIC_URL + "/img/productos/heladera.png"} alt="" />
               <h3>Heladeras</h3>
               <div role='button'>&gt;</div>
             </Producto>
-            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=freezer' target='_blank'>
+            <Producto href='https://briket.mitiendanube.com/linea-hogar/freezers/' target='_blank'>
               <img src={process.env.PUBLIC_URL + "/img/productos/freezer-hogar.png"} alt="" />
               <h3>Freezers</h3>
               <div role='button'>&gt;</div>
             </Producto>
-            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=exhibidora' target='_blank'>
+            <Producto href='https://briket.mitiendanube.com/linea-hogar/exhibidoras/' target='_blank'>
               <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-hogar.png"} alt="" />
               <h3>Exhibidoras</h3>
               <div role='button'>&gt;</div>
@@ -152,12 +152,12 @@ export default function Home() {
         )}
         {selectedLine === "comercial" && (
           <>
-            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=freezer' target='_blank'>
+            <Producto href='https://briket.mitiendanube.com/linea-comercial/freezers1/' target='_blank'>
               <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-comercial.png"} alt="" />
               <h3>Freezers</h3>
               <div role='button'>&gt;</div>
             </Producto>
-            <Producto href='http://www.briketweb.com.ar/v2/productos.php?tipo=exhibidora' target='_blank'>
+            <Producto href='https://briket.mitiendanube.com/linea-comercial/exhibidoras2/' target='_blank'>
               <img src={process.env.PUBLIC_URL + "/img/productos/freezer-comercial.png"} alt="" />
               <h3>Exhibidoras</h3>
               <div role='button'>&gt;</div>

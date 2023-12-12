@@ -56,7 +56,7 @@ const HeaderInner = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 12vw;
-  background-color: white;
+  background-color: #ecf0f3;
   z-index: 99;
   @media only screen and (max-width: 1024px) {
     padding: 0 0;
@@ -95,7 +95,7 @@ const MobileNav = styled.div`
   flex-direction: column;
   gap: 10px;
   top: -172px;
-  background-color: white;
+  background-color: #ecf0f3;
   width: 100%;
   padding: 0px 50px 20px;
   z-index: 98;
