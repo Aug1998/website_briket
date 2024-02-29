@@ -25,7 +25,7 @@ export default function Home() {
         </Box>
         <Box isSelected={selectedBox === "nosotros"} onClick={() => setSelectedBox("nosotros")}>
           <img src={process.env.PUBLIC_URL + '/img/aboutUs/nosotros.png'} />
-          <h4>Nostros</h4>
+          <h4>Nosotros</h4>
         </Box>
       </HeroBoxes>
 
@@ -152,14 +152,14 @@ export default function Home() {
         )}
         {selectedLine === "comercial" && (
           <>
-            <Producto href='https://briket.mitiendanube.com/linea-comercial/freezers1/' target='_blank'>
-              <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-comercial.png"} alt="" />
-              <h3>Freezers</h3>
-              <div role='button'>&gt;</div>
-            </Producto>
             <Producto href='https://briket.mitiendanube.com/linea-comercial/exhibidoras2/' target='_blank'>
               <img src={process.env.PUBLIC_URL + "/img/productos/freezer-comercial.png"} alt="" />
               <h3>Exhibidoras</h3>
+              <div role='button'>&gt;</div>
+            </Producto>
+            <Producto href='https://briket.mitiendanube.com/linea-comercial/freezers1/' target='_blank'>
+              <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-comercial.png"} alt="" />
+              <h3>Freezers</h3>
               <div role='button'>&gt;</div>
             </Producto>
           </>
@@ -216,7 +216,7 @@ export default function Home() {
           <div style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/postventa/servicio-tecnico.png")`}}>
             <h4>Servicio Técnico</h4>
             <p>Contamos con cobertura en todo el país, consulta por localidad.</p>
-            <a target="_blank" role="button" href="/servicio-tecnico">Consultá acá</a>
+            <a target="_blank" role="button" href="/briket/#/servicio-tecnico">Consultá acá</a>
           </div>
         </PostventaItem>
         <PostventaItem>

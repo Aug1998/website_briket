@@ -42,7 +42,7 @@ export default function HeroSlider(props) {
 const SliderContainer = styled.div`
   width: 100vw;
   min-height: 400px;
-  max-height: 560px;
+  max-height: 500px;
   display: flex;
   flex-direction: column;
   align-self: center;
