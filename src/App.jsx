@@ -5,8 +5,8 @@ import {
 import Header from './components/Header'
 import Footer from './components/Footer'
 import WhatsappFloatingButton from './components/WhatsappFloatingButton'
-import Home from "./pages/Home";
-import ServicioTecnico from "./pages/ServicioTecnico";
+import Home from "./pages/home/Home";
+import ServicioTecnico from "./pages/servicioTecnico/ServicioTecnico";
 
 function App() {
 
