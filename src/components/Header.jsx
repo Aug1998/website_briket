@@ -41,8 +41,9 @@ const Header = (props) => {
 export default Header;
 
 const HeaderWrapper = styled.div`
-  width: 100%;
-  height: 110px;
+  width: 100vw;
+  height: 10vh;
+  min-height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,14 +72,14 @@ const Nav = styled.div`
   button {
     all: unset;
     cursor: pointer;
-    font-size: 16px;
-    letter-spacing: 1px;
+    font-size: 1vw;
+    letter-spacing: 0.08vw;
     font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
     color: black;
     &:not(:last-child) {
-      margin-right: 32px;
+      margin-right: 2vw;
     }
     &:hover {
       text-decoration: underline;
@@ -123,7 +124,7 @@ const MobileNav = styled.div`
 `
 
 const Logo = styled.img`
-  height: 54px;
+  height: 64%;
 `
 
 const MobileNavButton = styled.button`

@@ -111,7 +111,7 @@ export default function Home() {
         )}
       </S.AboutUs>
 
-      <S.Label id="productos">Productos</S.Label>
+      <S.Title id="productos">Productos</S.Title>
       <S.ProductsCTAContainer>
         <S.ProductsBanner>Conocé todos nuestros productos</S.ProductsBanner>
         <S.ProductsCTA href='https://briket.mitiendanube.com/productos/' target='_blank'>Click Acá</S.ProductsCTA>
@@ -167,7 +167,7 @@ export default function Home() {
         )}
       </S.Productos>
 
-      <S.Label id="postventa">Postventa</S.Label>
+      <S.Title id="postventa">Postventa</S.Title>
       <S.Postventa>
         <S.PostventaItem>
           <div>

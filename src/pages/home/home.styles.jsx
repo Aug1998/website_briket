@@ -7,7 +7,7 @@ export const HeroBoxes = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 12vw;
-  margin: 60px 0;
+  margin: clamp(80px, 9vh, 500px) 0;
   @media only screen and (max-width: 1024px) {
     padding: 0 20px;
   }
@@ -17,8 +17,6 @@ export const Box = styled.div`
   cursor: pointer;
   width: 21vw;
   height: 17vw;
-  max-width: 330px;
-  max-height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +33,7 @@ export const Box = styled.div`
     height: 100%;
   }
   h4 {
-    font-size: 1.4rem;
+    font-size: 1.5vw;
     color: #00347f;
     text-align: center;
   }
@@ -50,9 +48,6 @@ export const Box = styled.div`
     img {
       width: 90px;
       height: unset;
-    }
-    h4 {
-      font-size: 1.2rem;
     }
   }
 `
@@ -71,19 +66,18 @@ export const AboutUs = styled.div`
       margin-bottom: 18px;
       text-transform: uppercase;
       font-weight: 600;
-      font-size: 2em;
+      font-size: 2.3vw;
       color: #2c3a77;
     }
     p{
       max-width: 60ch;
-      font-size: 0.9em;
-      line-height: 1.5em;
+      font-size: 1vw;
+      line-height: clamp(1.4rem, 2.8vh, 10rem);
    
     }
   }
   img{
     width: 36vw;
-    max-width: 540px;
   }
   @media only screen and (max-width: 1024px) {
     justify-content: center;
@@ -102,31 +96,32 @@ export const AboutUs = styled.div`
   }
 `
 
-export const Label = styled.h3`
+export const Title = styled.h3`
  text-transform: uppercase;
  font-weight: 600;
- font-size: 1.8em;
- padding: 0 12vw 6px;
+ font-size: 2vw;
+ padding: 0 12vw 1.2vh;
  position: relative;
- letter-spacing: 2px;
- margin: 60px 0 30px;
+ letter-spacing: 0.12vw;
+ margin: 8vh 0 4vh;
  &::before {
   content: "";
-  width: 60px;
-  height: 2px;
+  width: 4.4vw;
+  height: 0.4vh;
   background-color: #2c3a77;
   position: absolute;
   left: 0;
   bottom: 0;
   margin: 0 12vw;
- }
+
+}
   @media only screen and (max-width: 1024px) {
     padding: 0 8vw 4px;
     font-size: 1.6em;
     &::before {
       margin: 0 8vw;
-    }
   }
+}
 `
 
 export const ProductsCTAContainer = styled.div`
@@ -138,39 +133,35 @@ export const ProductsCTAContainer = styled.div`
 export const ProductsBanner = styled.h3`
  text-transform: uppercase;
  width: 100%;
- padding: 60px 0;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: clamp(120px, 22vh, 2000px);
  background-color: #d3d7d6;
  font-weight: 600;
- font-size: 2.8em;
+ font-size: 2.8vw;
  color: black;
  position: relative;
  text-align: center;
-  @media only screen and (max-width: 1024px) {
-    font-size: 2em;
-  }
 `
 
 export const ProductsCTA = styled.a`
   text-transform: uppercase;
   text-decoration: none;
-  padding: 12px 30px;
+  padding: 1.8vh 2vw;
   background-color: #2c3a77;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 2em;
+  font-size: 2vw;
   color: white;
   position: relative;
   text-align: center;
-  margin-top: -40px;
+  margin-top: -4vh;
   transition: 0.3s;
   cursor: pointer;
   &:hover{
     background-color: #355594;
     transform: translateY(-4px);
-  }
-  @media only screen and (max-width: 1024px) {
-    margin-top: -26px;
-    font-size: 1.6em;
   }
 `
 
@@ -178,21 +169,15 @@ export const Lineas = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 10vw;
   padding: 0 16vw;
-  height: 580px;
   box-sizing: border-box;
   width: 100vw;
-  @media only screen and (max-width: 1024px) {
-    gap: 30px;
-    padding: 0;
-    height: 460px;
-  }
+  margin: clamp(40px, 6vh, 200px) 0;
 `
 
 export const LineasImg = styled.img`
-  width: 50%;
-  overflow-x: hidden;
+  height: clamp(300px, 44vh, 1000px);
   cursor: pointer;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -200,9 +185,6 @@ export const LineasImg = styled.img`
   -o-user-drag: none;
   transition: all 0.2s;
   transform: ${props => props.isSelected ? "scale(1.1)" : ""};
-  @media only screen and (max-width: 1024px) {
-    width: 40%;
-  }
 `
 
 export const Productos = styled.div`
@@ -210,18 +192,19 @@ export const Productos = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 12vw 40px;
-  gap: 20px;
+  padding: clamp(50px, 8vh, 200px) 18vw;
+  gap: 5vh;
   background-color: #f4f5f9;
 `
 
 export const Producto = styled.a`
+  border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #d3d7d6;
   width: 100%;
-  padding: 40px 70px;
+  padding: 6vh 2vw;
   cursor: pointer;
   transition: 0.3s;
   text-decoration: none;
@@ -235,32 +218,31 @@ export const Producto = styled.a`
   h3 {
     text-transform: uppercase;
     color: black;
-    font-size: 2.6em;
+    font-size: 2.4vw;
     font-weight: 400;
   }
   img {
-    max-height: 200px;
+    min-height: 140px;
+    height: 20vh;
   }
   div {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #bfbfbf;
-    width: 36px;
-    height: 60px;
+    width: 3vw;
+    min-height: 80px;
+    height: 9vh;
     color: white;
-    font-size: 2em;
-    margin-bottom: 16px;
-    margin-left: 150px;
-    transform: translateX(-10px);
+    font-size: 2.2vw;
+    transform: translateX(-1vw);
     transition: 0.3s;
     @media only screen and (max-width: 1024px) {
-      margin-bottom: 0px;
-      margin-left: 0px;
-      transform: translateX(0px);
+      transform: translateX(0);
     }
   }
   @media only screen and (max-width: 1024px) {
+    max-width: 400px;
     flex-direction: column;
     padding: 30px 40px;
     gap: 12px;
@@ -272,8 +254,8 @@ export const Postventa = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
-  padding: 60px 0;
+  gap: 5vw;
+  padding: 8vh 0;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
   }
@@ -287,22 +269,24 @@ export const PostventaItem = styled.div`
   background-color: #2c3a77;
   p{
     color: #3f3f3f;
-    font-size: 0.9em;
+    font-size: 1vw;
   }
   div:first-of-type{
     background-color: white;
-    width: 130px;
-    height: 130px;
+    min-height: 100px;
+    min-width: 100px;
+    width: 16vh;
+    height: 16vh;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 99;
     svg {
-      max-width: 90px;
-      max-height: 80px;
+      width: 60%;
+      height: 60%;
       fill: #011689;
-      transform: translate(1px, -1px);
+      transform: translate(0.08vw, -0.1vh);
     }
   }
   div:last-of-type{
@@ -310,26 +294,29 @@ export const PostventaItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
     text-align: center;
-    gap: 40px;
-    width: 360px;
-    height: 410px;
-    margin-top: -70px;
-    padding: 100px 30px 30px 30px;
+    gap: 6vh;
+    width: 22vw;
+    min-height: 300px;
+    height: 50vh;
+    margin-top: -9vh;
     h4 {
       color: #0033a1;
       text-transform: uppercase;
-      font-size: 1.5em;
+      font-size: 1.6vw;
       font-weight: 700;
-      line-height: 1.2em;
+      line-height: 4vh;
     }
   }
   a {
     background-color: #2c3a77;
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    font-size: 1vw;
+    padding: 2vh 1.4vw;
     border-radius: 18px;
     text-transform: uppercase;
     transition: 0.2s;

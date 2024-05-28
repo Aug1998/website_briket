@@ -50,62 +50,53 @@ export default function Footer() {
 }
 
 const FooterContainer = styled.div`
+  width: 100vw;
   background-color: #303030;
-  padding: 40px 14vw;
+  padding: 6vh 14vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 10vw;
   img {
     filter: brightness(1000) grayscale(1000);
-    width: 300px;
+    width: 16vw;
   }
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
   }
-  @media only screen and (max-width: 1350px) {
+  /* @media only screen and (max-width: 1350px) {
     padding: 40px 6vw;
-  }
+  } */
 `
 
 const ContactContainer = styled.div`
   color: white;
-  font-size: 0.9em;
+  font-size: 1vw;
   h5 {
     text-transform: uppercase;
-    font-size: 1em;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
   }
-  p {
-    font-size: 0.9em;
-  }
-  
 `
 
 const SocialMediaContainer = styled.div`
-  margin-top: 20px;
   display: flex;
-  gap: 12px;
+  margin-top: 2vh;
+  gap: 0.6vw;
   a{
     transition: 0.2s;
     &:hover{
-      transform: translateY(-3px);
+      transform: translateY(-0.6vh);
     }
   }
   svg {
-    width: 30px;
-    height: 30px;
+    width: 1.6vw;
+    height: 1.6vw;
     filter: brightness(1000);
-  }
-  @media only screen and (max-width: 1024px) {
-    justify-content: center;
-    margin-top: 40px;
   }
 `
 
 const Certificados = styled.div`
   img {
     filter: none;
-    width: 240px;
   }
 `
