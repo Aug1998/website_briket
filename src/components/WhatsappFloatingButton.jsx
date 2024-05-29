@@ -21,8 +21,8 @@ const ButtonContainer = styled.a`
   position: fixed;
   right: 30px;
   bottom: 30px;
-  width: 66px;
-  height: 66px;
+  width: 8vh;
+  height: 8vh;
   background-color: #46a606;
   border-radius: 50%;
   z-index: 99;
@@ -37,7 +37,7 @@ const ButtonContainer = styled.a`
   }
   svg {
     margin-left: 2px;
-    width: 34px;
+    width: 54%;
   }
   @media only screen and (max-width: 1024px) {
     width: 60px;

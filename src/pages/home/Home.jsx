@@ -111,7 +111,7 @@ export default function Home() {
         )}
       </S.AboutUs>
 
-      <S.Label id="productos">Productos</S.Label>
+      <S.Title id="productos">Productos</S.Title>
       <S.ProductsCTAContainer>
         <S.ProductsBanner>Conocé todos nuestros productos</S.ProductsBanner>
         <S.ProductsCTA href='https://briket.mitiendanube.com/productos/' target='_blank'>Click Acá</S.ProductsCTA>
@@ -134,14 +134,14 @@ export default function Home() {
       <S.Productos>
         {selectedLine === "hogar" && (
           <>
-            <S.Producto href='https://briket.mitiendanube.com/linea-hogar/heladeras/' target='_blank'>
-              <img src={process.env.PUBLIC_URL + "/img/productos/heladera.png"} alt="" />
-              <h3>Heladeras</h3>
-              <div role='button'>&gt;</div>
-            </S.Producto>
             <S.Producto href='https://briket.mitiendanube.com/linea-hogar/freezers/' target='_blank'>
               <img src={process.env.PUBLIC_URL + "/img/productos/freezer-hogar.png"} alt="" />
               <h3>Freezers</h3>
+              <div role='button'>&gt;</div>
+            </S.Producto>
+            <S.Producto href='https://briket.mitiendanube.com/linea-hogar/heladeras/' target='_blank'>
+              <img src={process.env.PUBLIC_URL + "/img/productos/heladera.png"} alt="" />
+              <h3>Heladeras</h3>
               <div role='button'>&gt;</div>
             </S.Producto>
             <S.Producto href='https://briket.mitiendanube.com/linea-hogar/exhibidoras/' target='_blank'>
@@ -153,21 +153,21 @@ export default function Home() {
         )}
         {selectedLine === "comercial" && (
           <>
-            <S.Producto href='https://briket.mitiendanube.com/linea-comercial/exhibidoras2/' target='_blank'>
-              <img src={process.env.PUBLIC_URL + "/img/productos/freezer-comercial.png"} alt="" />
-              <h3>Exhibidoras</h3>
-              <div role='button'>&gt;</div>
-            </S.Producto>
             <S.Producto href='https://briket.mitiendanube.com/linea-comercial/freezers1/' target='_blank'>
               <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-comercial.png"} alt="" />
               <h3>Freezers</h3>
+              <div role='button'>&gt;</div>
+            </S.Producto>
+            <S.Producto href='https://briket.mitiendanube.com/linea-comercial/exhibidoras2/' target='_blank'>
+              <img src={process.env.PUBLIC_URL + "/img/productos/freezer-comercial.png"} alt="" />
+              <h3>Exhibidoras</h3>
               <div role='button'>&gt;</div>
             </S.Producto>
           </>
         )}
       </S.Productos>
 
-      <S.Label id="postventa">Postventa</S.Label>
+      <S.Title id="postventa">Postventa</S.Title>
       <S.Postventa>
         <S.PostventaItem>
           <div>

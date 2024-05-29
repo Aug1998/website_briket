@@ -7,7 +7,7 @@ const GlobalStyle = css`
     margin: 0;
     font-family: 'Roboto';
   }
-  body, .root{
+  body, .root, html{
     width: 100vw;
     overflow-x: hidden;
   }
