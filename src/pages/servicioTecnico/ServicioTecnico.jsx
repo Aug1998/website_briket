@@ -20,7 +20,7 @@ const PageContainer = styled.div`
   padding: 40px 0 60px;
   background-color: #f8f9f9;
   img {
-    height: 800px;
+    height: 80vh;
   }
   h2 {
     margin-top: 210px;

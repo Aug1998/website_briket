@@ -49,6 +49,9 @@ export const Box = styled.div`
       width: 90px;
       height: unset;
     }
+    h4 {
+      font-size: 2.5vw;
+    }
   }
 `
 
@@ -143,6 +146,9 @@ export const ProductsBanner = styled.h3`
  color: black;
  position: relative;
  text-align: center;
+  @media only screen and (max-width: 500px) {
+    font-size: 6vw;
+  }
 `
 
 export const ProductsCTA = styled.a`
@@ -162,6 +168,10 @@ export const ProductsCTA = styled.a`
   &:hover{
     background-color: #355594;
     transform: translateY(-4px);
+  }
+  @media only screen and (max-width: 500px) {
+    padding: 1.8vh 4vw;
+    font-size: 4vw;
   }
 `
 
@@ -185,6 +195,9 @@ export const LineasImg = styled.img`
   -o-user-drag: none;
   transition: all 0.2s;
   transform: ${props => props.isSelected ? "scale(1.1)" : ""};
+  @media only screen and (max-width: 500px) {
+    height: 19vh
+  }
 `
 
 export const Productos = styled.div`
@@ -195,13 +208,21 @@ export const Productos = styled.div`
   padding: clamp(50px, 8vh, 200px) 18vw;
   gap: 5vh;
   background-color: #f4f5f9;
+  @media only screen and (max-width: 500px) {
+    padding: clamp(50px, 8vh, 200px) 10vw;
+  }
 `
 
 export const Producto = styled.a`
   border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+  'img'
+  'title'
+  'arrow'
+  ;
   background-color: #d3d7d6;
   width: 100%;
   padding: 6vh 2vw;
@@ -220,12 +241,15 @@ export const Producto = styled.a`
     color: black;
     font-size: 2.4vw;
     font-weight: 400;
+    grid-area: title;
   }
   img {
     min-height: 140px;
     height: 20vh;
+    grid-area: img;
   }
   div {
+    grid-area: arrow;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -237,15 +261,27 @@ export const Producto = styled.a`
     font-size: 2.2vw;
     transform: translateX(-1vw);
     transition: 0.3s;
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 500px) {
       transform: translateX(0);
+      height: 2.4vh;
+      min-height: 0px;
     }
   }
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 500px) {
     max-width: 400px;
-    flex-direction: column;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: 
+      'img img'
+      'title arrow'
+    ;
     padding: 30px 40px;
     gap: 12px;
+    h3 {
+      text-align: right;
+    }
   }
 `
 
@@ -256,7 +292,7 @@ export const Postventa = styled.div`
   justify-content: center;
   gap: 5vw;
   padding: 8vh 0;
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 500px) {
     flex-direction: column;
   }
 `
@@ -270,13 +306,16 @@ export const PostventaItem = styled.div`
   p{
     color: #3f3f3f;
     font-size: 1vw;
+    @media only screen and (max-width: 500px) {
+      font-size: 3.4vw;
+    }
   }
   div:first-of-type{
     background-color: white;
     min-height: 100px;
     min-width: 100px;
-    width: 16vh;
-    height: 16vh;
+    width: 14vh;
+    height: 14vh;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -310,6 +349,12 @@ export const PostventaItem = styled.div`
       font-weight: 700;
       line-height: 4vh;
     }
+    @media only screen and (max-width: 500px) {
+      width: 80vw;
+      h4 {
+        font-size: 6vw;
+      }
+    }
   }
   a {
     background-color: #2c3a77;
@@ -323,6 +368,10 @@ export const PostventaItem = styled.div`
     &:hover{
       background-color: #2a4479;
       transform: translateY(-3px);
+    }
+    @media only screen and (max-width: 500px) {
+      font-size: 3.4vw;
+      padding: 1vh 3vw;
     }
   }
 `

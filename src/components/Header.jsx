@@ -98,10 +98,10 @@ const MobileNav = styled.div`
   top: -172px;
   background-color: #ecf0f3;
   width: 100%;
-  padding: 0px 50px 20px;
+  padding: 50px 50px 20px;
   z-index: 98;
   transition: all 0.3s;
-  transform: ${props => props.isOpen ? "translateY(282px)" : ""};
+  transform: ${props => props.isOpen ? "translateY(232px)" : ""};
   button {
     all: unset;
     cursor: pointer;
@@ -125,6 +125,9 @@ const MobileNav = styled.div`
 
 const Logo = styled.img`
   height: 64%;
+  @media only screen and (max-width: 600px) {
+    height: 46%;
+  }
 `
 
 const MobileNavButton = styled.button`

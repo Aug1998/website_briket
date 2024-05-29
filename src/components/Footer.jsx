@@ -60,13 +60,13 @@ const FooterContainer = styled.div`
   img {
     filter: brightness(1000) grayscale(1000);
     width: 16vw;
+    @media only screen and (max-width: 500px) {
+      width: 50vw;
+    }
   }
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 500px) {
     flex-direction: column;
   }
-  /* @media only screen and (max-width: 1350px) {
-    padding: 40px 6vw;
-  } */
 `
 
 const ContactContainer = styled.div`
@@ -75,6 +75,9 @@ const ContactContainer = styled.div`
   h5 {
     text-transform: uppercase;
     margin-bottom: 1vh;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 4vw;
   }
 `
 
@@ -93,10 +96,23 @@ const SocialMediaContainer = styled.div`
     height: 1.6vw;
     filter: brightness(1000);
   }
+  @media only screen and (max-width: 500px) {
+    gap: 2vw;
+    svg {
+      width: 7vw;
+      height: 7vw;
+    }
+  }
 `
 
 const Certificados = styled.div`
   img {
     filter: none;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
