@@ -125,7 +125,7 @@ const MobileNav = styled.div`
 
 const Logo = styled.img`
   height: 64%;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 720px) {
     height: 46%;
   }
 `

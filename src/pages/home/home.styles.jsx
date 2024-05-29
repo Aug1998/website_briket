@@ -146,7 +146,7 @@ export const ProductsBanner = styled.h3`
  color: black;
  position: relative;
  text-align: center;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 720px) {
     font-size: 6vw;
   }
 `
@@ -169,7 +169,7 @@ export const ProductsCTA = styled.a`
     background-color: #355594;
     transform: translateY(-4px);
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 720px) {
     padding: 1.8vh 4vw;
     font-size: 4vw;
   }
@@ -195,7 +195,7 @@ export const LineasImg = styled.img`
   -o-user-drag: none;
   transition: all 0.2s;
   transform: ${props => props.isSelected ? "scale(1.1)" : ""};
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 720px) {
     height: 19vh
   }
 `
@@ -208,7 +208,7 @@ export const Productos = styled.div`
   padding: clamp(50px, 8vh, 200px) 18vw;
   gap: 5vh;
   background-color: #f4f5f9;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 720px) {
     padding: clamp(50px, 8vh, 200px) 10vw;
   }
 `
@@ -216,12 +216,10 @@ export const Productos = styled.div`
 export const Producto = styled.a`
   border-radius: 3px;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 100%;
   grid-template-areas: 
-  'img'
-  'title'
-  'arrow'
+  'img title arrow'
   ;
   background-color: #d3d7d6;
   width: 100%;
@@ -229,6 +227,8 @@ export const Producto = styled.a`
   cursor: pointer;
   transition: 0.3s;
   text-decoration: none;
+  align-items: center;
+  justify-content: center;
   &:hover{
     filter: brightness(108%);
     & > div {
@@ -242,6 +242,7 @@ export const Producto = styled.a`
     font-size: 2.4vw;
     font-weight: 400;
     grid-area: title;
+    text-align: center;
   }
   img {
     min-height: 140px;
@@ -261,18 +262,16 @@ export const Producto = styled.a`
     font-size: 2.2vw;
     transform: translateX(-1vw);
     transition: 0.3s;
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 720px) {
       transform: translateX(0);
       height: 2.4vh;
       min-height: 0px;
     }
   }
-  @media only screen and (max-width: 500px) {
-    max-width: 400px;
+  @media only screen and (max-width: 720px) {
+    max-width: 720px;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
-    align-items: center;
-    justify-content: center;
     grid-template-areas: 
       'img img'
       'title arrow'
@@ -292,7 +291,7 @@ export const Postventa = styled.div`
   justify-content: center;
   gap: 5vw;
   padding: 8vh 0;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 720px) {
     flex-direction: column;
   }
 `
@@ -306,7 +305,7 @@ export const PostventaItem = styled.div`
   p{
     color: #3f3f3f;
     font-size: 1vw;
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 720px) {
       font-size: 3.4vw;
     }
   }
@@ -349,7 +348,7 @@ export const PostventaItem = styled.div`
       font-weight: 700;
       line-height: 4vh;
     }
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 720px) {
       width: 80vw;
       h4 {
         font-size: 6vw;
@@ -369,7 +368,7 @@ export const PostventaItem = styled.div`
       background-color: #2a4479;
       transform: translateY(-3px);
     }
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 720px) {
       font-size: 3.4vw;
       padding: 1vh 3vw;
     }
