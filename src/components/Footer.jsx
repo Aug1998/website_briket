@@ -78,6 +78,7 @@ const ContactContainer = styled.div`
   }
   @media only screen and (max-width: 720px) {
     font-size: 4vw;
+    text-align: center;
   }
 `
 
@@ -98,6 +99,7 @@ const SocialMediaContainer = styled.div`
   }
   @media only screen and (max-width: 720px) {
     gap: 2vw;
+    justify-content: center;
     svg {
       width: 7vw;
       height: 7vw;

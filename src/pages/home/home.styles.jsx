@@ -116,6 +116,10 @@ export const Title = styled.h3`
   left: 0;
   bottom: 0;
   margin: 0 12vw;
+  @media only screen and (max-width: 1024px) {
+    width: 14vw;
+    bottom: -6px;
+  }
 
 }
   @media only screen and (max-width: 1024px) {
@@ -243,6 +247,9 @@ export const Producto = styled.a`
     font-weight: 400;
     grid-area: title;
     text-align: center;
+    @media only screen and (max-width: 720px) {
+      font-size: 4vw;
+    }
   }
   img {
     min-height: 140px;
@@ -277,7 +284,7 @@ export const Producto = styled.a`
       'title arrow'
     ;
     padding: 30px 40px;
-    gap: 12px;
+    gap: 30px;
     h3 {
       text-align: right;
     }
@@ -335,8 +342,9 @@ export const PostventaItem = styled.div`
     justify-content: center;
     padding-left: 0.6vw;
     padding-right: 0.6vw;
+    padding-top: 3vh;
     text-align: center;
-    gap: 6vh;
+    gap: 4vh;
     width: 22vw;
     min-height: 300px;
     height: 50vh;
