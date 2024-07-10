@@ -2,7 +2,7 @@
   "name": "briket",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aug1998.github.io/briket/",
+  "homepage": "https://aug1998.github.io/website_briket/",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
