@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import React from 'react';
 
 export default function ServicioTecnico() {
   const mql = window.matchMedia('(max-width: 1024px)');
@@ -8,7 +8,12 @@ export default function ServicioTecnico() {
   return (
     <PageContainer>
       <img src={process.env.PUBLIC_URL + "/img/argentina.png"} alt="" />
-      <h2>Para solicitar {isMobile && <br></br>}un servicio {!isMobile && <br></br>} técnico, {isMobile && <br></br>}<a href="http://200.55.245.33:3000/" target='_blank'>ingrese aquí</a></h2>
+      <h2>
+        Para solicitar {isMobile && <br></br>}
+        un servicio {!isMobile && <br></br>} 
+        técnico, {isMobile && <br></br>}
+          <a href="http://postventa.briket.com.ar:3000/" target='_blank' rel="noreferrer">ingrese aquí</a>
+      </h2>
     </PageContainer>
   )
 }

@@ -2,9 +2,9 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import Header from './components/Header'
-import Footer from './components/Footer'
-import WhatsappFloatingButton from './components/WhatsappFloatingButton'
+import Footer from './components/Footer';
+import { Header } from './components/Header';
+import WhatsappFloatingButton from './components/WhatsappFloatingButton';
 import Home from "./pages/home/Home";
 import ServicioTecnico from "./pages/servicioTecnico/ServicioTecnico";
 
@@ -15,13 +15,13 @@ function App() {
 
   return (
     <>
-    <WhatsappFloatingButton />
-    <Header isMobile={isMobile} />
-    <Routes>
-      <Route path="/servicio-tecnico" element={<ServicioTecnico/>} />
-      <Route path="/" element={<Home/>} />
-    </Routes>
-    <Footer />
+      <WhatsappFloatingButton />
+      <Header isMobile={isMobile} />
+      <Routes>
+        <Route path="/servicio-tecnico" element={<ServicioTecnico />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Footer />
     </>
   );
 }

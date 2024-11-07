@@ -1,53 +1,59 @@
-import { useState } from 'react'
-import styled from '@emotion/styled'
-import { Link } from "react-router-dom";
+import styled from '@emotion/styled';
+import { useState } from 'react';
+import HeaderAnimation from './HeaderAnimation';
 
-const Header = (props) => {
+export const Header = (props) => {
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false)
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
   return (
     <>
-    <HeaderWrapper id="inicio">
-      <HeaderInner>
-        <MobileNavButton onClick={() => setMobileNavIsOpen(!mobileNavIsOpen)}>
-          <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 6.00092H21M3 12.0009H21M3 18.0009H21" stroke="#555555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </MobileNavButton>
-        <Logo src={process.env.PUBLIC_URL + '/img/logo.png'}/>
-        <Nav>
-          <button onClick={() => document.getElementById('inicio').scrollIntoView() }>Inicio</button>
-          <button onClick={() => document.getElementById('nosotros').scrollIntoView() }>Nosotros</button>
-          <button onClick={() => document.getElementById('productos').scrollIntoView() }>Productos</button>
-          <button onClick={() => document.getElementById('postventa').scrollIntoView() }>Postventa</button>
-          <button onClick={() => document.getElementById('contacto').scrollIntoView() }>Contacto</button>
-        </Nav>
-      </HeaderInner>
-    </HeaderWrapper>
+      <HeaderWrapper id="inicio">
+        <HeaderAnimation />
+        <HeaderInner>
+          <MobileNavButton onClick={() => setMobileNavIsOpen(!mobileNavIsOpen)}>
+            <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 6.00092H21M3 12.0009H21M3 18.0009H21" stroke="#555555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </MobileNavButton>
+          <Logo src={process.env.PUBLIC_URL + '/img/logo.png'} />
+          <Nav>
+            <button onClick={() => document.getElementById('inicio').scrollIntoView()}>Inicio</button>
+            <button onClick={() => document.getElementById('nosotros').scrollIntoView()}>Nosotros</button>
+            <button onClick={() => document.getElementById('productos').scrollIntoView()}>Productos</button>
+            <button onClick={() => document.getElementById('postventa').scrollIntoView()}>Postventa</button>
+            <button onClick={() => document.getElementById('contacto').scrollIntoView()}>Contacto</button>
+          </Nav>
+        </HeaderInner>
+      </HeaderWrapper>
       {vw <= 1024 && (
         <MobileNav isOpen={mobileNavIsOpen}>
-          <button onClick={() => document.getElementById('inicio').scrollIntoView() }>Inicio</button>
-          <button onClick={() => document.getElementById('nosotros').scrollIntoView() }>Nosotros</button>
-          <button onClick={() => document.getElementById('productos').scrollIntoView() }>Productos</button>
-          <button onClick={() => document.getElementById('postventa').scrollIntoView() }>Postventa</button>
-          <button onClick={() => document.getElementById('contacto').scrollIntoView() }>Contacto</button>
+          <button onClick={() => document.getElementById('inicio').scrollIntoView()}>Inicio</button>
+          <button onClick={() => document.getElementById('nosotros').scrollIntoView()}>Nosotros</button>
+          <button onClick={() => document.getElementById('productos').scrollIntoView()}>Productos</button>
+          <button onClick={() => document.getElementById('postventa').scrollIntoView()}>Postventa</button>
+          <button onClick={() => document.getElementById('contacto').scrollIntoView()}>Contacto</button>
         </MobileNav>
       )}
     </>
   )
 }
 
-export default Header;
-
 const HeaderWrapper = styled.div`
+  overflow: hidden;
   width: 100vw;
   height: 10vh;
   min-height: 80px;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99;
+  z-index: 999;
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 1px 8px 0px;
+  transition: 180ms;
+  &:hover {
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 3px 8px 0px;
+  }
 `
 
 const HeaderInner = styled.div`
@@ -57,8 +63,7 @@ const HeaderInner = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 12vw;
-  background-color: #ecf0f3;
-  z-index: 99;
+  z-index: 2;
   @media only screen and (max-width: 1024px) {
     padding: 0 0;
     justify-content: center;
@@ -72,17 +77,19 @@ const Nav = styled.div`
   button {
     all: unset;
     cursor: pointer;
-    font-size: 1vw;
+    font-size: 0.85rem;
     letter-spacing: 0.08vw;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
-    color: black;
+    color: #000000da;
+    transition: 100ms;
     &:not(:last-child) {
       margin-right: 2vw;
     }
     &:hover {
-      text-decoration: underline;
+      transform: translateY(-1px);
+      color: #000000;
     }
   }
   @media only screen and (max-width: 1024px) {
@@ -105,7 +112,7 @@ const MobileNav = styled.div`
   button {
     all: unset;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: 1px;
     font-weight: 500;
     text-transform: uppercase;
@@ -115,7 +122,7 @@ const MobileNav = styled.div`
       margin-right: 32px;
     }
     &:hover {
-      text-decoration: underline;
+      font-weight: 700;
     }
   }
   @media only screen and (min-width: 1024px) {
@@ -124,7 +131,14 @@ const MobileNav = styled.div`
 `
 
 const Logo = styled.img`
-  height: 64%;
+  height: 60%;
+  opacity: 0.9;
+  transition: 0.2s;
+  &:hover{
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.01);
+  }
   @media only screen and (max-width: 720px) {
     height: 46%;
   }

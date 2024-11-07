@@ -1,7 +1,6 @@
-import React from 'react'
+import styled from '@emotion/styled';
+import React, { useRef } from 'react';
 import Slider from "react-slick";
-import styled from '@emotion/styled'
-import { useState, useRef } from 'react'
 
 export default function HeroSlider(props) {
   const sliderRef = useRef(null)
@@ -40,6 +39,7 @@ export default function HeroSlider(props) {
 }
 
 const SliderContainer = styled.div`
+  padding-top: 10vh;
   width: 100vw;
   height: 64vh;
   display: flex;

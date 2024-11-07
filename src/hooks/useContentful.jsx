@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react';
 
 const contentful = require("contentful");
 
@@ -31,7 +31,7 @@ export const useContentful = () => {
       return;
     }
     setSelectedModelName(model.fields.modelo)
-  }, [selectedBrand])
+  }, [boats, selectedBrand])
 
   
   const selectedModel = useMemo(() => {
