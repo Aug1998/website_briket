@@ -12,7 +12,7 @@ export default function ServicioTecnico() {
         Para solicitar {isMobile && <br></br>}
         un servicio {!isMobile && <br></br>} 
         técnico, {isMobile && <br></br>}
-          <a href="http://postventa.briket.com.ar:3000/" target='_blank' rel="noreferrer">ingrese aquí</a>
+          <a href="http://postventa.briket.com.ar:3000/" target='_self' rel="noreferrer">ingrese aquí</a>
       </h2>
     </PageContainer>
   )

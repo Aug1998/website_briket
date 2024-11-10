@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import HeaderAnimation from './HeaderAnimation';
 
 export const Header = (props) => {
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false)
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  const navigate = useNavigate()
 
   return (
     <>
@@ -16,9 +18,15 @@ export const Header = (props) => {
               <path d="M3 6.00092H21M3 12.0009H21M3 18.0009H21" stroke="#555555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </MobileNavButton>
-          <Logo src={process.env.PUBLIC_URL + '/img/logo.png'} />
+          <Logo onClick={() => {
+                navigate("/")
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }} src={process.env.PUBLIC_URL + '/img/logo.png'} />
           <Nav>
-            <button onClick={() => document.getElementById('inicio').scrollIntoView()}>Inicio</button>
+            <button onClick={() => {
+                navigate("/")
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }}> Inicio </button>
             <button onClick={() => document.getElementById('nosotros').scrollIntoView()}>Nosotros</button>
             <button onClick={() => document.getElementById('productos').scrollIntoView()}>Productos</button>
             <button onClick={() => document.getElementById('postventa').scrollIntoView()}>Postventa</button>

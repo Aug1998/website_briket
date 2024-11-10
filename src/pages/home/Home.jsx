@@ -217,7 +217,7 @@ export default function Home() {
           <div style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/postventa/servicio-tecnico.png")`}}>
             <h4>Servicio Técnico</h4>
             <p>Contamos con cobertura en todo el país, consulta por localidad.</p>
-            <a target="_blank" role="button" href="/website_briket/#/servicio-tecnico">Consultá acá</a>
+            <a target="_self" role="button" href="/website_briket/#/servicio-tecnico">Consultá acá</a>
           </div>
         </S.PostventaItem>
         <S.PostventaItem>
@@ -273,7 +273,7 @@ export default function Home() {
           </div>
           <div style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/postventa/garantia.png")`}}>
             <h4>Garantía</h4>
-            <p>Contamos con cobertura en todo el pais, consulta por localidad.</p>
+            <p>Contamos con cobertura en todo el país, consulta por localidad.</p>
           </div>
         </S.PostventaItem>
         <S.PostventaItem>
