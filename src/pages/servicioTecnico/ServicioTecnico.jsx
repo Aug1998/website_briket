@@ -24,6 +24,7 @@ const PageContainer = styled.div`
   align-items: center;
   padding: 40px 0 60px;
   background-color: #f8f9f9;
+  padding-top: 100px;
   img {
     height: 80vh;
   }

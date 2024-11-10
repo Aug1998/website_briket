@@ -26,9 +26,7 @@ export default function HeroSlider(props) {
           {props.imageUrlList.map((imageUrl, index) => {
             return (
               <SliderItem viewportWidth={vw} key={index}>
-                <img 
-                  src={process.env.PUBLIC_URL.concat(imageUrl)} 
-                  />
+                <img src={process.env.PUBLIC_URL.concat(imageUrl)} alt=''/>
               </SliderItem> 
             )
           })}
@@ -39,7 +37,6 @@ export default function HeroSlider(props) {
 }
 
 const SliderContainer = styled.div`
-  padding-top: 10vh;
   width: 100vw;
   height: 64vh;
   display: flex;

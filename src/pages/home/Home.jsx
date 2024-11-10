@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
+import styled from '@emotion/styled'
 import React, { useState } from 'react'
 import HeroSlider from '../../components/HeroSlider'
 import * as S from './home.styles.jsx'
@@ -12,7 +13,7 @@ export default function Home() {
   const heroMobileImagesUrls = ['/img/hero/mobile-hero1.png', '/img/hero/mobile-hero2.png', '/img/hero/mobile-hero3.png'];
   
   return (
-    <>
+    <PageContainer>
       <HeroSlider imageUrlList={vw > 1024 ? heroImagesUrls : heroMobileImagesUrls} />
 
       <S.HeroBoxes id="nosotros">
@@ -316,7 +317,10 @@ export default function Home() {
           </div>
         </S.PostventaItem>
       </S.Postventa>
-    </>
+    </PageContainer>
   )
 }
 
+const PageContainer = styled.div`
+  padding-top: 80px;
+`
