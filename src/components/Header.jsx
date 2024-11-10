@@ -57,7 +57,7 @@ const HeaderWrapper = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 999;
-  box-shadow: rgba(99, 99, 99, 0.4) 0px 1px 8px 0px;
+  box-shadow: rgba(32, 32, 32, 0.4) 0px 1px 8px 0px;
   transition: 180ms;
   &:hover {
     box-shadow: rgba(99, 99, 99, 0.5) 0px 3px 8px 0px;

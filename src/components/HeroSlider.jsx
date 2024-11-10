@@ -20,25 +20,22 @@ export default function HeroSlider(props) {
   };
 
   return (
-    <>
-      <SliderContainer>
-        <Slider ref={sliderRef} {...settings}>
-          {props.imageUrlList.map((imageUrl, index) => {
-            return (
-              <SliderItem viewportWidth={vw} key={index}>
-                <img src={process.env.PUBLIC_URL.concat(imageUrl)} alt=''/>
-              </SliderItem> 
-            )
-          })}
-        </Slider>
-      </SliderContainer>
-    </>
+    <SliderContainer>
+      <Slider ref={sliderRef} {...settings}>
+        {props.imageUrlList.map((imageUrl, index) => {
+          return (
+            <SliderItem viewportWidth={vw} key={index}>
+              <img src={process.env.PUBLIC_URL.concat(imageUrl)} alt=''/>
+            </SliderItem> 
+          )
+        })}
+      </Slider>
+    </SliderContainer>
     )
 }
 
 const SliderContainer = styled.div`
-  width: 100vw;
-  height: 64vh;
+  height: 72vh;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -48,7 +45,7 @@ const SliderContainer = styled.div`
 
 const SliderItem = styled.div`
   height: 100%;
-  width: 100vw;
+  width: 100%;
   display: flex!important;
   overflow: hidden;
   img {

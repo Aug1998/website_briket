@@ -7,7 +7,7 @@ export const HeroBoxes = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 12vw;
-  margin: clamp(80px, 9vh, 500px) 0;
+  margin: 8vh 0;
   @media only screen and (max-width: 1024px) {
     padding: 0 20px;
   }
@@ -16,26 +16,39 @@ export const HeroBoxes = styled.div`
 export const Box = styled.div`
   cursor: pointer;
   width: 21vw;
-  height: 17vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-transform: uppercase;
-  gap: 16px;
-  padding: 50px 0;
+  gap: 14px;
+  padding: 44px 30px 50px;
   transform: ${props => (props.isSelected ? "scale(1.1)" : "")};
-  background-color: ${props => (props.isSelected ? "#d3d7d6" : "#e8eef2")};
   transition: 0.2s;
   z-index: 99;
   user-select: none;
+  border-radius: 2px;
+  box-shadow: rgba(15, 15, 15, 0.2) 0px 4px ${props => (props.isSelected ? "10px" : "6px")} 0px;
+  /* background-color: ${props => (props.isSelected ? "#d3d7d6" : "#e8eef2")}; */
+  filter: brightness(0.94);
+  background: 
+    linear-gradient(112.5deg, rgba(232, 232, 232, 0.03) 0%, rgba(232, 232, 232, 0.03) 2%, rgba(231, 231, 231, 0.03) 2%, rgba(231, 231, 231, 0.03) 4%, rgba(231, 231, 231, 0.03) 4%, rgba(231, 231, 231, 0.03) 11%, rgba(2, 2, 2, 0.03) 11%, rgba(2, 2, 2, 0.03) 67%, rgba(231, 231, 231, 0.03) 67%, rgba(231, 231, 231, 0.03) 90%, rgba(111, 111, 111, 0.03) 90%, rgba(111, 111, 111, 0.03) 100%), 
+    
+    linear-gradient(157.5deg, rgba(210, 210, 210, 0.03) 0%, rgba(210, 210, 210, 0.03) 17%, rgba(254, 254, 254, 0.03) 17%, rgba(254, 254, 254, 0.03) 18%, rgba(96, 96, 96, 0.03) 18%, rgba(96, 96, 96, 0.03) 44%, rgba(159, 159, 159, 0.03) 44%, rgba(159, 159, 159, 0.03) 70%, rgba(24, 24, 24, 0.03) 70%, rgba(24, 24, 24, 0.03) 82%, rgba(16, 16, 16, 0.03) 82%, rgba(16, 16, 16, 0.03) 100%), 
+    
+    linear-gradient(22.5deg, rgba(47, 47, 47, 0.03) 0%, rgba(47, 47, 47, 0.03) 32%, rgba(124, 124, 124, 0.03) 32%, rgba(124, 124, 124, 0.03) 40%, rgba(200, 200, 200, 0.03) 40%, rgba(200, 200, 200, 0.03) 42%, rgba(16, 16, 16, 0.03) 42%, rgba(16, 16, 16, 0.03) 64%, rgba(243, 243, 243, 0.03) 64%, rgba(243, 243, 243, 0.03) 94%, rgba(93, 93, 93, 0.03) 94%, rgba(93, 93, 93, 0.03) 100%), 
+    
+    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
   img {
-    height: 100%;
+    height: 76px;
   }
   h4 {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
+    font-weight: 500;
     color: #00347f;
     text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
   }
   &:hover{
     background-color: #d3d7d6;
@@ -70,7 +83,7 @@ export const AboutUs = styled.div`
       text-transform: uppercase;
       font-weight: 600;
       font-size: 2.3vw;
-      color: #2c3a77;
+      color: rgba(1, 21, 137, 0.85);
     }
     p{
       max-width: 60ch;
@@ -105,16 +118,17 @@ export const Title = styled.h3`
  font-size: 2vw;
  padding: 0 12vw 1.2vh;
  position: relative;
- letter-spacing: 0.12vw;
- margin: 8vh 0 4vh;
+ letter-spacing: 1.5px;
+ margin: 12vh 0 6vh;
+ color: hsla(0, 0%, 0%, 0.85);
  &::before {
   content: "";
-  width: 4.4vw;
-  height: 0.4vh;
-  background-color: #2c3a77;
+  width: 4.6vw;
+  height: 0.6vh;
+  background-color: rgba(1, 21, 137, 0.85);
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -2px;
   margin: 0 12vw;
 
 }
@@ -135,15 +149,16 @@ export const ProductsCTAContainer = styled.div`
 
 export const ProductsBanner = styled.h3`
  text-transform: uppercase;
- width: 100%;
+ width: 94%;
+ padding: 80px 0;
+ border-radius: 6px;
  display: flex;
  align-items: center;
  justify-content: center;
- height: clamp(120px, 22vh, 2000px);
  background-color: #d3d7d6;
- font-weight: 600;
- font-size: 2.8vw;
- color: black;
+ font-weight: 500;
+ font-size: 2.6vw;
+ color: rgba(0, 0, 0, 0.85);
  position: relative;
  text-align: center;
   @media only screen and (max-width: 720px) {
@@ -155,18 +170,19 @@ export const ProductsCTA = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.8vh 2vw;
-  background-color: #2c3a77;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 2vw;
+  background-color: rgba(1, 21, 137, 1);
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 1.6rem;
   color: white;
   position: relative;
   text-align: center;
   margin-top: -4vh;
+  margin-bottom: 8vh;
   transition: 0.3s;
   cursor: pointer;
   &:hover{
-    background-color: #355594;
+    filter: brightness(1.4);
     transform: translateY(-4px);
   }
   @media only screen and (max-width: 720px) {
@@ -238,7 +254,7 @@ export const Producto = styled.a`
   }
   h3 {
     text-transform: uppercase;
-    color: black;
+    color: rgba(0, 0, 0, 0.85);
     font-size: 2.4vw;
     font-weight: 400;
     grid-area: title;
@@ -285,7 +301,7 @@ export const Producto = styled.a`
 `
 
 export const Postventa = styled.div`
-  background-color: #2c3a77;
+  background-color: rgba(1, 21, 137, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -301,7 +317,7 @@ export const PostventaItem = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #2c3a77;
+  background-color: rgba(1, 21, 137, 0.85);
   p{
     color: #3f3f3f;
     font-size: 1vw;
@@ -356,7 +372,7 @@ export const PostventaItem = styled.div`
     }
   }
   a {
-    background-color: #2c3a77;
+    background-color: rgba(1, 21, 137, 0.85);
     color: white;
     text-decoration: none;
     font-size: 1vw;
