@@ -7,7 +7,7 @@ export const HeroBoxes = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 12vw;
-  margin: 8vh 0;
+  margin-bottom: -4vh;
   @media only screen and (max-width: 1024px) {
     padding: 0 20px;
   }
@@ -16,13 +16,12 @@ export const HeroBoxes = styled.div`
 export const Box = styled.div`
   cursor: pointer;
   width: 21vw;
+  padding: 36px 30px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  text-transform: uppercase;
   gap: 14px;
-  padding: 44px 30px 50px;
   transform: ${props => (props.isSelected ? "scale(1.1)" : "")};
   transition: 0.2s;
   z-index: 99;
@@ -40,7 +39,7 @@ export const Box = styled.div`
     
     linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
   img {
-    height: 76px;
+    height: 74px;
   }
   h4 {
     font-size: 1.3vw;
@@ -48,7 +47,7 @@ export const Box = styled.div`
     color: #00347f;
     text-align: center;
     letter-spacing: 0.5px;
-    text-transform: lowercase;
+    text-transform: uppercase;
   }
   &:hover{
     background-color: #d3d7d6;
@@ -69,7 +68,7 @@ export const Box = styled.div`
 `
 
 export const AboutUs = styled.div`
-  padding: 80px 11vw;
+  padding: 70px 11vw;
   display: flex;
   width: 100%;
   align-items: center;
@@ -87,15 +86,14 @@ export const AboutUs = styled.div`
       color: rgba(1, 21, 137, 0.85);
     }
     p{
-      max-width: 60ch;
+      max-width: 64ch;
       font-size: 1vw;
-      line-height: clamp(1.4rem, 2.8vh, 10rem);
-   
+      line-height: 1.5em;
     }
   }
   img{
     position: absolute;
-    right: -140px;
+    right: -180px;
     top: 0px;
     height: 100%;
     mask-image: linear-gradient(to left, black, transparent ) ;
@@ -174,11 +172,11 @@ export const ProductsBanner = styled.h3`
 export const ProductsCTA = styled.a`
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1.8vh 2vw;
+  padding: 14px 38px;
   background-color: rgba(1, 21, 137, 1);
   border-radius: 40px;
-  font-weight: 500;
-  font-size: 1.6rem;
+  font-weight: 400;
+  font-size: 1.3rem;
   color: white;
   position: relative;
   text-align: center;

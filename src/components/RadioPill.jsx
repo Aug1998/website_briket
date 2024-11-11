@@ -32,7 +32,7 @@ const Container = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  height: 58px;
+  height: 54px;
   width: 340px;
   overflow: hidden;
   input {
@@ -48,8 +48,8 @@ const Container = styled.div`
     overflow: hidden;
     z-index: 1;
     transition: all 0.5s;
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 16px;
     color: white;
   }
 `
@@ -57,7 +57,7 @@ const Container = styled.div`
 const Background = styled.span`
   position: absolute;
   width: 50%;
-  height: 47px;
+  height: 43px;
   background-color: #2b3fac;
   top: 4px;
   border-radius: 30px;

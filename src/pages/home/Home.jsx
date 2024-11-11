@@ -17,6 +17,7 @@ export default function Home() {
     <PageContainer>
       <HeroSlider imageUrlList={vw > 1024 ? heroImagesUrls : heroMobileImagesUrls} />
 
+      <S.Title id="postventa">Sobre nosotros</S.Title>
       <S.HeroBoxes id="nosotros">
         <S.Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
           <img src={process.env.PUBLIC_URL + '/img/aboutUs/empresa.png'} />
@@ -28,7 +29,7 @@ export default function Home() {
         </S.Box>
         <S.Box isSelected={selectedBox === "nosotros"} onClick={() => setSelectedBox("nosotros")}>
           <img src={process.env.PUBLIC_URL + '/img/aboutUs/nosotros.png'} />
-          <h4>Nosotros</h4>
+          <h4>Nuestros valores</h4>
         </S.Box>
       </S.HeroBoxes>
 
@@ -80,7 +81,7 @@ export default function Home() {
         {selectedBox === "nosotros" && (
           <>
             <div>
-              <h3>Nosotros</h3>
+              <h3>Nuestros valores</h3>
               <p>
                 <b>Misión:</b> Nuestra misión es proporcionar productos de calidad y confiabilidad que satisfagan las necesidades de nuestros clientes en el mercado de electrodomésticos. Nos esforzamos por ofrecer soluciones innovadoras y funcionales para el hogar y los negocios. Nos comprometemos a brindar un servicio excepcional al cliente y a mantenernos a la vanguardia de las demandas del mercado.
                 <br />
