@@ -168,8 +168,10 @@ const Container = styled.div`
   position: relative;
   gap: 5vw;
   padding: 12vh 0;
-  @media only screen and (max-width: 728px) {    flex-direction: column;
-    padding: 8vh 0;
+  @media only screen and (max-width: 728px) {
+    flex-direction: column;
+    padding: 6vh 0 10vh;
+    gap: 8vh;
   }
 `
 
@@ -221,7 +223,10 @@ const PostventaItem = styled.div`
       font-weight: 700;
       line-height: 4vh;
     }
-    @media only screen and (max-width: 728px) {      width: 76vw;
+    @media only screen and (max-width: 728px) {
+      width: 76vw;
+      height: unset;
+      padding: 80px 6vw 30px;
     }
   }
   a {
@@ -237,7 +242,8 @@ const PostventaItem = styled.div`
       filter: brightness(1.4);
       transform: translateY(-2px);
     }
-    @media only screen and (max-width: 728px) {      width: 60%;
+    @media only screen and (max-width: 728px) {
+      width: 60%;
     }
   }
 `

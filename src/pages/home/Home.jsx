@@ -87,8 +87,9 @@ export const ProductsBanner = styled.div`
       text-align: center;
     }
     @media only screen and (max-width: 720px) {
-    width: 94%;
-    h3 {
+      width: 94%;
+      padding: 46px 0;
+      h3 {
       font-size: 1.4em;
       max-width: 20ch;
       line-height: 1.4em;
