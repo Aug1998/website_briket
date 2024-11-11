@@ -69,11 +69,12 @@ export const Box = styled.div`
 `
 
 export const AboutUs = styled.div`
-  padding: 0 12vw;
+  padding: 80px 11vw;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   gap: 80px;
   div {
     display: flex;
@@ -93,7 +94,11 @@ export const AboutUs = styled.div`
     }
   }
   img{
-    width: 36vw;
+    position: absolute;
+    right: -140px;
+    top: 0px;
+    height: 100%;
+    mask-image: linear-gradient(to left, black, transparent ) ;
   }
   @media only screen and (max-width: 1024px) {
     justify-content: center;
@@ -149,7 +154,7 @@ export const ProductsCTAContainer = styled.div`
 
 export const ProductsBanner = styled.h3`
  text-transform: uppercase;
- width: 94%;
+ width: 84%;
  padding: 80px 0;
  border-radius: 6px;
  display: flex;
@@ -227,36 +232,38 @@ export const Productos = styled.div`
   @media only screen and (max-width: 720px) {
     padding: clamp(50px, 8vh, 200px) 10vw;
   }
+  section {
+    display: flex;
+    gap: 40px;
+  }
 `
 
 export const Producto = styled.a`
   border-radius: 3px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: 100%;
-  grid-template-areas: 
-  'img title arrow'
-  ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+
+  border-radius: 8px;
   background-color: #d3d7d6;
-  width: 100%;
-  padding: 6vh 2vw;
+  width: 320px;
+  padding: 50px 40px;
   cursor: pointer;
   transition: 0.3s;
   text-decoration: none;
-  align-items: center;
-  justify-content: center;
   &:hover{
-    filter: brightness(108%);
-    & > div {
-      background-color: #355594;
-      transform: translateX(0px);
+    filter: brightness(101%);
+    & > button {
+      filter: brightness(1.1);
     }
   }
   h3 {
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: rgba(0, 0, 0, 0.85);
-    font-size: 2.4vw;
-    font-weight: 400;
+    font-size: 1.4em;
+    font-weight: 600;
     grid-area: title;
     text-align: center;
   }
@@ -264,26 +271,19 @@ export const Producto = styled.a`
     min-height: 140px;
     height: 20vh;
     grid-area: img;
+    margin: 24px 0 40px;
   }
-  div {
-    grid-area: arrow;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #bfbfbf;
-    width: 3vw;
-    min-height: 80px;
-    height: 9vh;
+  button {
+    border-radius: 40px;
+    padding: 12px 12px;
+    width: 100%;
+    border: none;
+    background-color: #27389b;
     color: white;
-    font-size: 2.2vw;
-    transform: translateX(-1vw);
-    transition: 0.3s;
-    @media only screen and (max-width: 720px) {
-      transform: translateX(0);
-      height: 2.4vh;
-      min-height: 0px;
-    }
+    font-size: 0.95em;
+    cursor: pointer;
   }
+
   @media only screen and (max-width: 720px) {
     max-width: 720px;
     grid-template-columns: auto auto;

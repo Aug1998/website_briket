@@ -2,6 +2,7 @@
 import styled from '@emotion/styled'
 import React, { useState } from 'react'
 import HeroSlider from '../../components/HeroSlider'
+import RadioPill from '../../components/RadioPill.jsx'
 import * as S from './home.styles.jsx'
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
 
   const heroImagesUrls = ['/img/hero/hero1.png', '/img/hero/hero2.png', '/img/hero/hero3.png'];
   const heroMobileImagesUrls = ['/img/hero/mobile-hero1.png', '/img/hero/mobile-hero2.png', '/img/hero/mobile-hero3.png'];
-  
+
   return (
     <PageContainer>
       <HeroSlider imageUrlList={vw > 1024 ? heroImagesUrls : heroMobileImagesUrls} />
@@ -37,39 +38,39 @@ export default function Home() {
             <div>
               <h3>Nuestra empresa</h3>
               <p>
-                Somos una empresa especializada en la fabricación de 
-                electrodomésticos con una tradición de casi 70 años en el mercado. A lo largo de la historia, hemos demostrado consistentemente la calidad de nuestros productos, así como una sólida presencia en el mercado, ofreciendo a los consumidores argentinos alternativas confiables y asequibles. 
-                <br/>
-                <br/>
+                Somos una empresa especializada en la fabricación de
+                electrodomésticos con una tradición de casi 70 años en el mercado. A lo largo de la historia, hemos demostrado consistentemente la calidad de nuestros productos, así como una sólida presencia en el mercado, ofreciendo a los consumidores argentinos alternativas confiables y asequibles.
+                <br />
+                <br />
                 Nuestros productos se destacan por su nobleza, excelentes prestaciones y una relación calidad-precio inigualable.
-                <br/>
-                <br/>
-                Nuestra marca se caracteriza por su enfoque en la confianza, la tradición y las implicidad. Nos esforzamos por proporcionar soluciones funcionales y elegantes para consumidores que valoran la practicidad por encima de la sofisticación y la elegancia por encima del vanguardismo. Con el paso de los años, hemos dedicado nuestros esfuerzos al desarrollo de productos exclusivos y novedosos. 
-                <br/>
-                <br/>
+                <br />
+                <br />
+                Nuestra marca se caracteriza por su enfoque en la confianza, la tradición y las implicidad. Nos esforzamos por proporcionar soluciones funcionales y elegantes para consumidores que valoran la practicidad por encima de la sofisticación y la elegancia por encima del vanguardismo. Con el paso de los años, hemos dedicado nuestros esfuerzos al desarrollo de productos exclusivos y novedosos.
+                <br />
+                <br />
                 Además de servir al mercado de consumo, también atendemos al segmento comercial/industrial con diversas líneas de productos. En este ámbito, nos enfocamos en transmitir confianza, seguridad en el funcionamiento y practicidad en el uso de nuestros productos. Dado que se trata de bien es de uso, aseguramos una relación óptima entre precio y prestación.
               </p>
             </div>
             <img src={process.env.PUBLIC_URL + '/img/foto.png'} />
           </>
         )}
-         {selectedBox === "planta" && (
+        {selectedBox === "planta" && (
           <>
             <div>
               <h3>Planta industrial</h3>
               <p>
                 En nuestras instalaciones, que abarcan más de 50,000 metros cuadrados, invertimos continuamente en investigación y desarrollo (I+D) con el objetivo de diseñar productos modernos y eficientes.
-                <br/>
-                <br/>
+                <br />
+                <br />
                 Nuestra empresa ha cumplido rigurosamente con los protocolos internacionales destinados a la reducción de la huella de carbono.
-                <br/>
-                <br/>
+                <br />
+                <br />
                 En el marco del <b>Protocolo de Montreal</b>, hemos eliminado gases de nuestros productos que directamente afectaban la capa de ozono, reemplazándolos por compuestos 100% ecológicos y naturales. Por otro lado, en relación al <b>Protocolo de Kyoto</b>, hemos eliminado gases presentes en nuestros productos que contribuían al calentamiento global, sustituyendolos también por alternativas amigables con el medio ambiente.
-                <br/>
-                <br/>
+                <br />
+                <br />
                 Briket ha implementado un importante avance al incorporar Ciclopentano como agente expansor de la espuma aislante, eliminando por completo el uso de CFCs. Además, nuestros equipos operan con el gas ecológico R-600 y R-290.
-                <br/>
-                <br/>
+                <br />
+                <br />
                 Estos esfuerzos demuestran el firme compromiso de Briket con la preservación de la ecología, el respeto por la naturaleza y la convicción de que todos podemos contribuir a hacer del mundo un lugar mejor.
               </p>
             </div>
@@ -80,13 +81,13 @@ export default function Home() {
           <>
             <div>
               <h3>Nosotros</h3>
-                <p>
+              <p>
                 <b>Misión:</b> Nuestra misión es proporcionar productos de calidad y confiabilidad que satisfagan las necesidades de nuestros clientes en el mercado de electrodomésticos. Nos esforzamos por ofrecer soluciones innovadoras y funcionales para el hogar y los negocios. Nos comprometemos a brindar un servicio excepcional al cliente y a mantenernos a la vanguardia de las demandas del mercado.
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <b>Visión:</b> Aspiramos a convertirnos en la marca líder en electrodomésticos en Argentina, reconocida por la calidad de nuestros productos, la satisfacción del cliente y el compromiso con la innovación. Buscamos expandir nuestra presencia en el mercado nacional y consolidarnos como referentes en la industria de electrodomésticos, ofreciendo una amplia gama de productos confiables y adaptados a las cambiantes necesidades de los consumidores.
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <b>Valores:</b>
                 <ul>
                   <li>
@@ -117,55 +118,47 @@ export default function Home() {
         <S.ProductsBanner>Conocé todos nuestros productos</S.ProductsBanner>
         <S.ProductsCTA href='https://briket.mitiendanube.com/productos/' target='_blank'>Click Acá</S.ProductsCTA>
       </S.ProductsCTAContainer>
-      <S.Lineas>
-        <S.LineasImg 
-          isSelected={selectedLine === "hogar"} 
-          onClick={() => setSelectedLine("hogar")} 
-          src={process.env.PUBLIC_URL + `/img/lineas/hogar.png`} 
-          alt="" 
-        />
-        <S.LineasImg 
-          isSelected={selectedLine === "comercial"} 
-          onClick={() => setSelectedLine("comercial")} 
-          src={process.env.PUBLIC_URL + `/img/lineas/comercial.png`} 
-          alt="" 
-        />
-      </S.Lineas>
 
       <S.Productos>
-        {selectedLine === "hogar" && (
-          <>
-            <S.Producto href='https://briket.mitiendanube.com/linea-hogar/freezers/' target='_blank'>
-              <img src={process.env.PUBLIC_URL + "/img/productos/freezer-hogar.png"} alt="" />
-              <h3>Freezers</h3>
-              <div role='button'>&gt;</div>
-            </S.Producto>
-            <S.Producto href='https://briket.mitiendanube.com/linea-hogar/heladeras/' target='_blank'>
-              <img src={process.env.PUBLIC_URL + "/img/productos/heladera.png"} alt="" />
-              <h3>Heladeras</h3>
-              <div role='button'>&gt;</div>
-            </S.Producto>
-            <S.Producto href='https://briket.mitiendanube.com/linea-hogar/exhibidoras/' target='_blank'>
-              <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-hogar.png"} alt="" />
-              <h3>Exhibidoras</h3>
-              <div role='button'>&gt;</div>
-            </S.Producto>
-          </>
-        )}
-        {selectedLine === "comercial" && (
-          <>
-            <S.Producto href='https://briket.mitiendanube.com/linea-comercial/freezers1/' target='_blank'>
-              <img src={process.env.PUBLIC_URL + "/img/productos/freezer-comercial.png"} alt="" />
-              <h3>Freezers</h3>
-              <div role='button'>&gt;</div>
-            </S.Producto>
-            <S.Producto href='https://briket.mitiendanube.com/linea-comercial/exhibidoras2/' target='_blank'>
-              <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-comercial.png"} alt="" />
-              <h3>Exhibidoras</h3>
-              <div role='button'>&gt;</div>
-            </S.Producto>
-          </>
-        )}
+        <RadioPill
+          selectedOption={selectedLine}
+          handleClick={(option) => setSelectedLine(option)}
+        />
+        <section>
+          {selectedLine === "hogar" && (
+            <>
+              <S.Producto href='https://briket.mitiendanube.com/linea-hogar/freezers/' target='_blank'>
+                <h3>Freezers</h3>
+                <img src={process.env.PUBLIC_URL + "/img/productos/freezer-hogar.png"} alt="" />
+                <button>Más información</button>
+              </S.Producto>
+              <S.Producto href='https://briket.mitiendanube.com/linea-hogar/heladeras/' target='_blank'>
+                <h3>Heladeras</h3>
+                <img src={process.env.PUBLIC_URL + "/img/productos/heladera.png"} alt="" />
+                <button>Más información</button>
+              </S.Producto>
+              <S.Producto href='https://briket.mitiendanube.com/linea-hogar/exhibidoras/' target='_blank'>
+                <h3>Exhibidoras</h3>
+                <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-hogar.png"} alt="" />
+                <button>Más información</button>
+              </S.Producto>
+            </>
+          )}
+          {selectedLine === "comercial" && (
+            <>
+              <S.Producto href='https://briket.mitiendanube.com/linea-comercial/freezers1/' target='_blank'>
+                <h3>Freezers</h3>
+                <img src={process.env.PUBLIC_URL + "/img/productos/freezer-comercial.png"} alt="" />
+                <button>Más información</button>
+              </S.Producto>
+              <S.Producto href='https://briket.mitiendanube.com/linea-comercial/exhibidoras2/' target='_blank'>
+                <h3>Exhibidoras</h3>
+                <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-comercial.png"} alt="" />
+                <button>Más información</button>
+              </S.Producto>
+            </>
+          )}
+        </section>
       </S.Productos>
 
       <S.Title id="postventa">Postventa</S.Title>
@@ -174,7 +167,7 @@ export default function Home() {
           <div>
             <svg version="1.0" viewBox="0 0 279.000000 279.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,279.000000) scale(0.100000,-0.100000)" stroke="none">
-              <path d="M1180 2770 c-17 -17 -20 -33 -20 -108 l0 -88 -71 -23 c-39 -13 -101
+                <path d="M1180 2770 c-17 -17 -20 -33 -20 -108 l0 -88 -71 -23 c-39 -13 -101
               -38 -137 -57 l-66 -35 -67 67 c-55 55 -71 66 -91 61 -31 -8 -298 -278 -298
               -303 0 -10 30 -48 66 -85 l65 -66 -35 -69 c-19 -39 -45 -100 -57 -137 l-22
               -67 -92 0 c-66 0 -96 -4 -104 -14 -8 -9 -11 -78 -9 -227 l3 -214 100 -5 100
@@ -204,7 +197,7 @@ export default function Home() {
               26 82 62 -7 19 -17 24 -67 28 -52 4 -59 8 -62 28 -3 20 0 22 52 22 45 0 58 4
               70 21 15 22 11 48 -8 61 -6 4 -32 8 -58 8 -48 0 -64 10 -54 35 5 13 55 15 326
               15 l320 0 0 -230z"/>
-              <path d="M213 550 c-92 -22 -171 -100 -200 -199 -41 -142 59 -307 207 -340 26
+                <path d="M213 550 c-92 -22 -171 -100 -200 -199 -41 -142 59 -307 207 -340 26
               -6 213 -11 453 -11 394 0 408 1 427 20 15 15 20 33 20 70 l0 50 603 0 c578 0
               606 -1 662 -20 32 -11 68 -20 79 -20 32 0 294 90 311 107 19 18 20 122 3 145
               -7 9 -82 39 -166 66 l-153 51 -71 -25 -72 -24 -598 0 -598 0 0 48 c0 27 -7 57
@@ -215,7 +208,7 @@ export default function Home() {
               </g>
             </svg>
           </div>
-          <div style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/postventa/servicio-tecnico.png")`}}>
+          <div style={{ backgroundImage: `url("${process.env.PUBLIC_URL}/img/postventa/servicio-tecnico.png")` }}>
             <h4>Servicio Técnico</h4>
             <p>Contamos con cobertura en todo el país, consulta por localidad.</p>
             <a target="_self" role="button" href="/website_briket/#/servicio-tecnico">Consultá acá</a>
@@ -225,7 +218,7 @@ export default function Home() {
           <div>
             <svg version="1.0" viewBox="0 0 277.000000 276.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,276.000000) scale(0.100000,-0.100000)" stroke="none">
-              <path d="M1058 2733 c-14 -16 -55 -79 -92 -140 -37 -62 -68 -113 -69 -113 -1
+                <path d="M1058 2733 c-14 -16 -55 -79 -92 -140 -37 -62 -68 -113 -69 -113 -1
               0 -60 11 -132 25 -159 31 -180 31 -209 2 -19 -19 -25 -43 -40 -167 -9 -79 -19
               -146 -21 -148 -2 -3 -71 -21 -152 -41 -138 -34 -148 -38 -165 -67 -18 -30 -18
               -33 7 -110 14 -43 30 -97 36 -119 6 -22 15 -50 20 -63 5 -13 7 -28 3 -33 -3
@@ -258,7 +251,7 @@ export default function Home() {
               2 53 14 114 28 137 32 159 40 171 63 6 10 17 74 26 142 9 69 18 127 21 130 3
               2 62 -6 130 -19 90 -17 133 -21 152 -14 19 6 46 41 97 125 l71 117 117 -80
               c98 -68 121 -79 143 -74z"/>
-              <path d="M1275 2150 c-204 -33 -403 -150 -519 -308 -51 -71 -102 -176 -127
+                <path d="M1275 2150 c-204 -33 -403 -150 -519 -308 -51 -71 -102 -176 -127
               -267 -32 -113 -32 -288 0 -399 63 -226 203 -396 410 -501 112 -56 206 -77 341
               -78 134 0 217 17 327 68 221 102 369 281 438 528 24 86 22 284 -4 378 -44 159
               -147 318 -269 415 -73 58 -218 129 -303 148 -86 20 -219 27 -294 16z m260
@@ -266,13 +259,13 @@ export default function Home() {
               -200 -40 -101 -81 -165 -155 -239 -78 -78 -176 -134 -281 -161 -76 -19 -224
               -19 -300 0 -216 55 -393 230 -450 445 -19 71 -19 239 0 310 56 211 231 387
               440 445 69 18 237 19 310 0z"/>
-              <path d="M1458 1473 l-158 -158 -62 62 c-96 93 -121 101 -169 54 -51 -51 -43
+                <path d="M1458 1473 l-158 -158 -62 62 c-96 93 -121 101 -169 54 -51 -51 -43
               -70 83 -198 156 -157 133 -162 366 70 101 100 190 195 199 211 28 53 -10 116
               -70 116 -28 0 -51 -19 -189 -157z"/>
               </g>
             </svg>
           </div>
-          <div style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/postventa/garantia.png")`}}>
+          <div style={{ backgroundImage: `url("${process.env.PUBLIC_URL}/img/postventa/garantia.png")` }}>
             <h4>Garantía</h4>
             <p>Contamos con cobertura en todo el país, consulta por localidad.</p>
           </div>
@@ -281,11 +274,11 @@ export default function Home() {
           <div>
             <svg version="1.0" viewBox="0 0 251.000000 277.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,277.000000) scale(0.100000,-0.100000)" stroke="none">
-              <path d="M936 2756 c-21 -8 -55 -27 -75 -43 -41 -33 -91 -123 -91 -165 0 -26
+                <path d="M936 2756 c-21 -8 -55 -27 -75 -43 -41 -33 -91 -123 -91 -165 0 -26
               -3 -28 -37 -28 -21 0 -56 -9 -78 -19 -80 -37 -115 -101 -115 -211 l0 -70 475
               0 475 0 0 82 c0 69 -4 88 -25 124 -31 53 -79 83 -143 91 -48 5 -51 7 -57 41
               -15 78 -73 155 -143 188 -48 23 -138 28 -186 10z"/>
-              <path d="M145 2351 c-48 -22 -97 -70 -122 -120 -17 -34 -18 -96 -21 -1024 -1
+                <path d="M145 2351 c-48 -22 -97 -70 -122 -120 -17 -34 -18 -96 -21 -1024 -1
               -662 1 -1002 8 -1027 15 -57 68 -120 125 -149 l49 -26 826 0 c918 0 856 -4
               929 67 68 67 65 45 71 566 3 259 3 472 0 472 -3 -1 -35 -40 -72 -88 l-68 -87
               0 -362 0 -363 -29 -32 -29 -33 -786 -3 c-876 -3 -843 -5 -872 63 -12 30 -14
@@ -303,14 +296,14 @@ export default function Home() {
               40 -20 68 -50z m0 -510 c25 -27 46 -55 46 -61 0 -18 -361 -379 -379 -379 -25
               0 -211 191 -211 216 0 21 89 114 110 114 6 0 31 -19 56 -42 l45 -42 122 122
               c79 79 129 122 143 122 13 0 40 -20 68 -50z"/>
-              <path d="M2343 2065 c-34 -36 -50 -45 -76 -45 -24 0 -41 -9 -64 -32 -78 -82
+                <path d="M2343 2065 c-34 -36 -50 -45 -76 -45 -24 0 -41 -9 -64 -32 -78 -82
               -724 -913 -746 -960 -29 -61 -47 -148 -47 -226 l0 -54 43 7 c105 18 198 68
               273 147 34 35 603 752 708 891 24 31 28 44 23 78 -5 35 -1 48 24 82 16 22 29
               50 29 62 0 36 -70 95 -112 95 -6 0 -31 -20 -55 -45z"/>
               </g>
             </svg>
           </div>
-          <div style={{backgroundImage:`url("${process.env.PUBLIC_URL}/img/postventa/manuales.png")`}}>
+          <div style={{ backgroundImage: `url("${process.env.PUBLIC_URL}/img/postventa/manuales.png")` }}>
             <h4>Manuales y fichas técnicas</h4>
             <p>Cada producto cuenta con un manual específico y ficha técnica donde podrás encontrar todas las especificaciones, instalación y solución de problemas frencuentes.</p>
             <p><b>Encontralas en la descripción de cada producto</b></p>
