@@ -4,9 +4,9 @@ import React, { useState } from 'react'
 import HeroSlider from '../../components/HeroSlider'
 import RadioPill from '../../components/RadioPill.jsx'
 import * as S from './home.styles.jsx'
+import AboutUs from './Sections/AboutUs.jsx'
 
 export default function Home() {
-  const [selectedBox, setSelectedBox] = useState("empresa")
   const [selectedLine, setSelectedLine] = useState("comercial")
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
@@ -16,103 +16,7 @@ export default function Home() {
   return (
     <PageContainer>
       <HeroSlider imageUrlList={vw > 1024 ? heroImagesUrls : heroMobileImagesUrls} />
-
-      <S.Title id="postventa">Sobre nosotros</S.Title>
-      <S.HeroBoxes id="nosotros">
-        <S.Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
-          <img src={process.env.PUBLIC_URL + '/img/aboutUs/empresa.png'} />
-          <h4>Nuestra Empresa</h4>
-        </S.Box>
-        <S.Box isSelected={selectedBox === "planta"} onClick={() => setSelectedBox("planta")}>
-          <img src={process.env.PUBLIC_URL + '/img/aboutUs/planta.png'} />
-          <h4>Planta Industrial</h4>
-        </S.Box>
-        <S.Box isSelected={selectedBox === "nosotros"} onClick={() => setSelectedBox("nosotros")}>
-          <img src={process.env.PUBLIC_URL + '/img/aboutUs/nosotros.png'} />
-          <h4>Nuestros valores</h4>
-        </S.Box>
-      </S.HeroBoxes>
-
-      <S.AboutUs>
-        {selectedBox === "empresa" && (
-          <>
-            <div>
-              <h3>Nuestra empresa</h3>
-              <p>
-                Somos una empresa especializada en la fabricación de
-                electrodomésticos con una tradición de casi 70 años en el mercado. A lo largo de la historia, hemos demostrado consistentemente la calidad de nuestros productos, así como una sólida presencia en el mercado, ofreciendo a los consumidores argentinos alternativas confiables y asequibles.
-                <br />
-                <br />
-                Nuestros productos se destacan por su nobleza, excelentes prestaciones y una relación calidad-precio inigualable.
-                <br />
-                <br />
-                Nuestra marca se caracteriza por su enfoque en la confianza, la tradición y las implicidad. Nos esforzamos por proporcionar soluciones funcionales y elegantes para consumidores que valoran la practicidad por encima de la sofisticación y la elegancia por encima del vanguardismo. Con el paso de los años, hemos dedicado nuestros esfuerzos al desarrollo de productos exclusivos y novedosos.
-                <br />
-                <br />
-                Además de servir al mercado de consumo, también atendemos al segmento comercial/industrial con diversas líneas de productos. En este ámbito, nos enfocamos en transmitir confianza, seguridad en el funcionamiento y practicidad en el uso de nuestros productos. Dado que se trata de bien es de uso, aseguramos una relación óptima entre precio y prestación.
-              </p>
-            </div>
-            <img src={process.env.PUBLIC_URL + '/img/foto.png'} />
-          </>
-        )}
-        {selectedBox === "planta" && (
-          <>
-            <div>
-              <h3>Planta industrial</h3>
-              <p>
-                En nuestras instalaciones, que abarcan más de 50,000 metros cuadrados, invertimos continuamente en investigación y desarrollo (I+D) con el objetivo de diseñar productos modernos y eficientes.
-                <br />
-                <br />
-                Nuestra empresa ha cumplido rigurosamente con los protocolos internacionales destinados a la reducción de la huella de carbono.
-                <br />
-                <br />
-                En el marco del <b>Protocolo de Montreal</b>, hemos eliminado gases de nuestros productos que directamente afectaban la capa de ozono, reemplazándolos por compuestos 100% ecológicos y naturales. Por otro lado, en relación al <b>Protocolo de Kyoto</b>, hemos eliminado gases presentes en nuestros productos que contribuían al calentamiento global, sustituyendolos también por alternativas amigables con el medio ambiente.
-                <br />
-                <br />
-                Briket ha implementado un importante avance al incorporar Ciclopentano como agente expansor de la espuma aislante, eliminando por completo el uso de CFCs. Además, nuestros equipos operan con el gas ecológico R-600 y R-290.
-                <br />
-                <br />
-                Estos esfuerzos demuestran el firme compromiso de Briket con la preservación de la ecología, el respeto por la naturaleza y la convicción de que todos podemos contribuir a hacer del mundo un lugar mejor.
-              </p>
-            </div>
-            <img src={process.env.PUBLIC_URL + '/img/planta-industrial.jpg'} />
-          </>
-        )}
-        {selectedBox === "nosotros" && (
-          <>
-            <div>
-              <h3>Nuestros valores</h3>
-              <p>
-                <b>Misión:</b> Nuestra misión es proporcionar productos de calidad y confiabilidad que satisfagan las necesidades de nuestros clientes en el mercado de electrodomésticos. Nos esforzamos por ofrecer soluciones innovadoras y funcionales para el hogar y los negocios. Nos comprometemos a brindar un servicio excepcional al cliente y a mantenernos a la vanguardia de las demandas del mercado.
-                <br />
-                <br />
-                <b>Visión:</b> Aspiramos a convertirnos en la marca líder en electrodomésticos en Argentina, reconocida por la calidad de nuestros productos, la satisfacción del cliente y el compromiso con la innovación. Buscamos expandir nuestra presencia en el mercado nacional y consolidarnos como referentes en la industria de electrodomésticos, ofreciendo una amplia gama de productos confiables y adaptados a las cambiantes necesidades de los consumidores.
-                <br />
-                <br />
-                <b>Valores:</b>
-                <ul>
-                  <li>
-                    <u>Calidad y confiabilidad</u>: Nos esforzamos por superar las expectativas de nuestros clientes, proporcionando productos de alta calidad y confiabilidad que les brinden una experiencia satisfactoria.
-                  </li>
-                  <li>
-                    <u>Orientación al cliente</u>: Ponemos a nuestros clientes en el centro de todo lo que hacemos. Escuchamos y comprendemos sus necesidades para ofrecer soluciones adecuadas y un servicio excepcional.
-                  </li>
-                  <li>
-                    <u>Innovación</u>: Nos mantenemos actualizados con las últimas tendencias y exigencias del mercado. Buscamos constantemente nuevas formas de mejorar nuestros productos y procesos para mantenernos competitivos y relevantes.
-                  </li>
-                  <li>
-                    <u>Integridad y ética</u>: Actuamos con honestidad, transparencia y responsabilidad en todas nuestras operaciones y relaciones comerciales.
-                  </li>
-                  <li>
-                    <u>Compromiso con la comunidad</u>: Contribuimos al desarrollo sostenible de la comunidad en la que operamos, promoviendo prácticas socialmente responsables y respaldando iniciativas locales.
-                  </li>
-                </ul>
-              </p>
-            </div>
-            <img src={process.env.PUBLIC_URL + '/img/foto.png'} />
-          </>
-        )}
-      </S.AboutUs>
+      <AboutUs />
 
       <S.Title id="productos">Productos</S.Title>
       <S.ProductsCTAContainer>

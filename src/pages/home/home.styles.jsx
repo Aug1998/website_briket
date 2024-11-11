@@ -1,120 +1,5 @@
 import styled from '@emotion/styled'
 
-export const HeroBoxes = styled.div`
-  width: 100vw;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 12vw;
-  margin-bottom: -4vh;
-  @media only screen and (max-width: 1024px) {
-    padding: 0 20px;
-  }
-`
-
-export const Box = styled.div`
-  cursor: pointer;
-  width: 21vw;
-  padding: 36px 30px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 14px;
-  transform: ${props => (props.isSelected ? "scale(1.1)" : "")};
-  transition: 0.2s;
-  z-index: 99;
-  user-select: none;
-  border-radius: 2px;
-  box-shadow: rgba(15, 15, 15, 0.2) 0px 4px ${props => (props.isSelected ? "10px" : "6px")} 0px;
-  /* background-color: ${props => (props.isSelected ? "#d3d7d6" : "#e8eef2")}; */
-  filter: brightness(0.94);
-  background: 
-    linear-gradient(112.5deg, rgba(232, 232, 232, 0.03) 0%, rgba(232, 232, 232, 0.03) 2%, rgba(231, 231, 231, 0.03) 2%, rgba(231, 231, 231, 0.03) 4%, rgba(231, 231, 231, 0.03) 4%, rgba(231, 231, 231, 0.03) 11%, rgba(2, 2, 2, 0.03) 11%, rgba(2, 2, 2, 0.03) 67%, rgba(231, 231, 231, 0.03) 67%, rgba(231, 231, 231, 0.03) 90%, rgba(111, 111, 111, 0.03) 90%, rgba(111, 111, 111, 0.03) 100%), 
-    
-    linear-gradient(157.5deg, rgba(210, 210, 210, 0.03) 0%, rgba(210, 210, 210, 0.03) 17%, rgba(254, 254, 254, 0.03) 17%, rgba(254, 254, 254, 0.03) 18%, rgba(96, 96, 96, 0.03) 18%, rgba(96, 96, 96, 0.03) 44%, rgba(159, 159, 159, 0.03) 44%, rgba(159, 159, 159, 0.03) 70%, rgba(24, 24, 24, 0.03) 70%, rgba(24, 24, 24, 0.03) 82%, rgba(16, 16, 16, 0.03) 82%, rgba(16, 16, 16, 0.03) 100%), 
-    
-    linear-gradient(22.5deg, rgba(47, 47, 47, 0.03) 0%, rgba(47, 47, 47, 0.03) 32%, rgba(124, 124, 124, 0.03) 32%, rgba(124, 124, 124, 0.03) 40%, rgba(200, 200, 200, 0.03) 40%, rgba(200, 200, 200, 0.03) 42%, rgba(16, 16, 16, 0.03) 42%, rgba(16, 16, 16, 0.03) 64%, rgba(243, 243, 243, 0.03) 64%, rgba(243, 243, 243, 0.03) 94%, rgba(93, 93, 93, 0.03) 94%, rgba(93, 93, 93, 0.03) 100%), 
-    
-    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
-  img {
-    height: 74px;
-  }
-  h4 {
-    font-size: 1.3vw;
-    font-weight: 500;
-    color: #00347f;
-    text-align: center;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-  &:hover{
-    background-color: #d3d7d6;
-  }
-  @media only screen and (max-width: 1024px) {
-    padding: 16px;
-    width: 30%;
-    max-height: unset;
-    height: 184px;
-    img {
-      width: 90px;
-      height: unset;
-    }
-    h4 {
-      font-size: 2.5vw;
-    }
-  }
-`
-
-export const AboutUs = styled.div`
-  padding: 70px 11vw;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  gap: 80px;
-  div {
-    display: flex;
-    flex-direction: column;
-    h3{
-      margin-bottom: 18px;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 2.3vw;
-      color: rgba(1, 21, 137, 0.85);
-    }
-    p{
-      max-width: 64ch;
-      font-size: 1vw;
-      line-height: 1.5em;
-    }
-  }
-  img{
-    position: absolute;
-    right: -180px;
-    top: 0px;
-    height: 100%;
-    mask-image: linear-gradient(to left, black, transparent ) ;
-  }
-  @media only screen and (max-width: 1024px) {
-    justify-content: center;
-    padding: 20px 20px;
-    img{
-      display: none;
-    }
-    div {
-    h3{
-      font-size: 2em;
-    }
-    p{
-      font-size: 1.1em;
-    }
-  }
-  }
-`
-
 export const Title = styled.h3`
  text-transform: uppercase;
  font-weight: 600;
@@ -173,7 +58,7 @@ export const ProductsCTA = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   padding: 14px 38px;
-  background-color: rgba(1, 21, 137, 1);
+  background-color: #2b3fac;
   border-radius: 40px;
   font-weight: 400;
   font-size: 1.3rem;
@@ -185,7 +70,7 @@ export const ProductsCTA = styled.a`
   transition: 0.3s;
   cursor: pointer;
   &:hover{
-    filter: brightness(1.4);
+    filter: brightness(1.3);
     transform: translateY(-4px);
   }
   @media only screen and (max-width: 720px) {
@@ -225,7 +110,7 @@ export const Productos = styled.div`
   align-items: center;
   justify-content: center;
   padding: clamp(50px, 8vh, 200px) 18vw;
-  gap: 5vh;
+  gap: 6vh;
   background-color: #f4f5f9;
   @media only screen and (max-width: 720px) {
     padding: clamp(50px, 8vh, 200px) 10vw;
@@ -252,9 +137,10 @@ export const Producto = styled.a`
   transition: 0.3s;
   text-decoration: none;
   &:hover{
-    filter: brightness(101%);
+    transform: translateY(-4px);
     & > button {
-      filter: brightness(1.1);
+      filter: brightness(1.3);
+      transform: translateY(7px);
     }
   }
   h3 {
@@ -279,7 +165,9 @@ export const Producto = styled.a`
     background-color: #27389b;
     color: white;
     font-size: 0.95em;
+    transition: 0.3s;
     cursor: pointer;
+   
   }
 
   @media only screen and (max-width: 720px) {
