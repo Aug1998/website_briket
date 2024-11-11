@@ -8,7 +8,7 @@ export default function AboutUs() {
 
   return (
     <>
-      <Title id="postventa">Sobre nosotros</Title>
+      <Title id="nosotros">Sobre nosotros</Title>
       <HeroBoxes id="nosotros">
         <Box isSelected={selectedBox === "empresa"} onClick={() => setSelectedBox("empresa")}>
           <img src={process.env.PUBLIC_URL + '/img/aboutUs/empresa.png'} alt='' />

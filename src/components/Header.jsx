@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import HeaderAnimation from './HeaderAnimation';
+import { HeaderAnimation } from './HeaderAnimation';
 
 export const Header = (props) => {
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false)
@@ -27,20 +27,20 @@ export const Header = (props) => {
                 navigate("/")
                 window.scrollTo({top: 0, behavior: 'smooth'});
             }}> Inicio </button>
-            <button onClick={() => document.getElementById('nosotros').scrollIntoView()}>Nosotros</button>
-            <button onClick={() => document.getElementById('productos').scrollIntoView()}>Productos</button>
-            <button onClick={() => document.getElementById('postventa').scrollIntoView()}>Postventa</button>
-            <button onClick={() => document.getElementById('contacto').scrollIntoView()}>Contacto</button>
+            <button onClick={() => window.scrollTo({top: document.getElementById('nosotros').offsetTop - 100 ,behavior: 'smooth'})}>Nosotros</button>
+            <button onClick={() => window.scrollTo({top: document.getElementById('productos').offsetTop - 100 ,behavior: 'smooth'})}>Productos</button>
+            <button onClick={() => window.scrollTo({top: document.getElementById('postventa').offsetTop - 100 ,behavior: 'smooth'})}>Postventa</button>
+            <button onClick={() => window.scrollTo({top: document.getElementById('contacto').offsetTop ,behavior: 'smooth'})}>Contacto</button>
           </Nav>
         </HeaderInner>
       </HeaderWrapper>
       {vw <= 1024 && (
         <MobileNav isOpen={mobileNavIsOpen}>
-          <button onClick={() => document.getElementById('inicio').scrollIntoView()}>Inicio</button>
-          <button onClick={() => document.getElementById('nosotros').scrollIntoView()}>Nosotros</button>
-          <button onClick={() => document.getElementById('productos').scrollIntoView()}>Productos</button>
-          <button onClick={() => document.getElementById('postventa').scrollIntoView()}>Postventa</button>
-          <button onClick={() => document.getElementById('contacto').scrollIntoView()}>Contacto</button>
+          <button onClick={() => document.getElementById('inicio').scrollIntoView({behavior: 'smooth'})}>Inicio</button>
+          <button onClick={() => document.getElementById('nosotros').scrollIntoView({behavior: 'smooth'})}>Nosotros</button>
+          <button onClick={() => document.getElementById('productos').scrollIntoView({behavior: 'smooth'})}>Productos</button>
+          <button onClick={() => document.getElementById('postventa').scrollIntoView({behavior: 'smooth'})}>Postventa</button>
+          <button onClick={() => document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})}>Contacto</button>
         </MobileNav>
       )}
     </>
