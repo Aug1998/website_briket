@@ -1,13 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import styled from '@emotion/styled'
-import React, { useState } from 'react'
+import React from 'react'
 import HeroSlider from '../../components/HeroSlider'
-import RadioPill from '../../components/RadioPill.jsx'
-import * as S from './home.styles.jsx'
 import AboutUs from './Sections/AboutUs.jsx'
+import Productos from './Sections/Productos.jsx'
 
 export default function Home() {
-  const [selectedLine, setSelectedLine] = useState("comercial")
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
   const heroImagesUrls = ['/img/hero/hero1.png', '/img/hero/hero2.png', '/img/hero/hero3.png'];
@@ -18,57 +16,17 @@ export default function Home() {
       <HeroSlider imageUrlList={vw > 1024 ? heroImagesUrls : heroMobileImagesUrls} />
       <AboutUs />
 
-      <S.Title id="productos">Productos</S.Title>
-      <S.ProductsCTAContainer>
-        <S.ProductsBanner>Conocé todos nuestros productos</S.ProductsBanner>
-        <S.ProductsCTA href='https://briket.mitiendanube.com/productos/' target='_blank'>Click Acá</S.ProductsCTA>
-      </S.ProductsCTAContainer>
+      <Title id="productos">Productos</Title>
+      <ProductsCTAContainer>
+        <ProductsBanner>Conocé todos nuestros productos</ProductsBanner>
+        <ProductsCTA href='https://briket.mitiendanube.com/productos/' target='_blank'>Click Acá</ProductsCTA>
+      </ProductsCTAContainer>
 
-      <S.Productos>
-        <RadioPill
-          selectedOption={selectedLine}
-          handleClick={(option) => setSelectedLine(option)}
-        />
-        <section>
-          {selectedLine === "hogar" && (
-            <>
-              <S.Producto href='https://briket.mitiendanube.com/linea-hogar/freezers/' target='_blank'>
-                <h3>Freezers</h3>
-                <img src={process.env.PUBLIC_URL + "/img/productos/freezer-hogar.png"} alt="" />
-                <button>Más información</button>
-              </S.Producto>
-              <S.Producto href='https://briket.mitiendanube.com/linea-hogar/heladeras/' target='_blank'>
-                <h3>Heladeras</h3>
-                <img src={process.env.PUBLIC_URL + "/img/productos/heladera.png"} alt="" />
-                <button>Más información</button>
-              </S.Producto>
-              <S.Producto href='https://briket.mitiendanube.com/linea-hogar/exhibidoras/' target='_blank'>
-                <h3>Exhibidoras</h3>
-                <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-hogar.png"} alt="" />
-                <button>Más información</button>
-              </S.Producto>
-            </>
-          )}
-          {selectedLine === "comercial" && (
-            <>
-              <S.Producto href='https://briket.mitiendanube.com/linea-comercial/freezers1/' target='_blank'>
-                <h3>Freezers</h3>
-                <img src={process.env.PUBLIC_URL + "/img/productos/freezer-comercial.png"} alt="" />
-                <button>Más información</button>
-              </S.Producto>
-              <S.Producto href='https://briket.mitiendanube.com/linea-comercial/exhibidoras2/' target='_blank'>
-                <h3>Exhibidoras</h3>
-                <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-comercial.png"} alt="" />
-                <button>Más información</button>
-              </S.Producto>
-            </>
-          )}
-        </section>
-      </S.Productos>
+      <Productos />
 
-      <S.Title id="postventa">Postventa</S.Title>
-      <S.Postventa>
-        <S.PostventaItem>
+      <Title id="postventa">Postventa</Title>
+      <Postventa>
+        <PostventaItem>
           <div>
             <svg version="1.0" viewBox="0 0 279.000000 279.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,279.000000) scale(0.100000,-0.100000)" stroke="none">
@@ -118,8 +76,8 @@ export default function Home() {
             <p>Contamos con cobertura en todo el país, consulta por localidad.</p>
             <a target="_self" role="button" href="/website_briket/#/servicio-tecnico">Consultá acá</a>
           </div>
-        </S.PostventaItem>
-        <S.PostventaItem>
+        </PostventaItem>
+        <PostventaItem>
           <div>
             <svg version="1.0" viewBox="0 0 277.000000 276.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,276.000000) scale(0.100000,-0.100000)" stroke="none">
@@ -174,8 +132,8 @@ export default function Home() {
             <h4>Garantía</h4>
             <p>Contamos con cobertura en todo el país, consulta por localidad.</p>
           </div>
-        </S.PostventaItem>
-        <S.PostventaItem>
+        </PostventaItem>
+        <PostventaItem>
           <div>
             <svg version="1.0" viewBox="0 0 251.000000 277.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,277.000000) scale(0.100000,-0.100000)" stroke="none">
@@ -208,17 +166,212 @@ export default function Home() {
               </g>
             </svg>
           </div>
-          <div style={{ backgroundImage: `url("${process.env.PUBLIC_URL}/img/postventa/manuales.png")` }}>
+          <div style={{ backgroundImage: `url("${process.env.PUBLIC_URL}/img/postventa/manualepng")` }}>
             <h4>Manuales y fichas técnicas</h4>
-            <p>Cada producto cuenta con un manual específico y ficha técnica donde podrás encontrar todas las especificaciones, instalación y solución de problemas frencuentes.</p>
+            <p>Cada producto cuenta con un manual específico y ficha técnica donde podrás encontrar todas las especificaciones, instalación y solución de problemas frencuente</p>
             <p><b>Encontralas en la descripción de cada producto</b></p>
           </div>
-        </S.PostventaItem>
-      </S.Postventa>
+        </PostventaItem>
+      </Postventa>
     </PageContainer>
   )
 }
 
 const PageContainer = styled.div`
   padding-top: 80px;
+`
+
+
+export const Title = styled.h3`
+ text-transform: uppercase;
+ font-weight: 600;
+ font-size: 2vw;
+ margin: 8vh 0 6vh;
+ padding: 0 12vw 1vh;
+ position: relative;
+ letter-spacing: 1.5px;
+ color: hsla(0, 0%, 0%, 0.85);
+ &::before {
+  content: "";
+  width: 4.6vw;
+  height: 0.6vh;
+  background-color: rgba(1, 21, 137, 0.85);
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  margin: 0 12vw;
+}
+  @media only screen and (max-width: 1024px) {
+    padding: 0 8vw 4px;
+    font-size: 1.6em;
+    &::before {
+      margin: 0 8vw;
+  }
+}
+`
+
+export const ProductsCTAContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const ProductsBanner = styled.h3`
+ text-transform: uppercase;
+ width: 84%;
+ padding: 80px 0;
+ border-radius: 6px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: #d3d7d6;
+ font-weight: 500;
+ font-size: 2.6vw;
+ color: rgba(0, 0, 0, 0.85);
+ position: relative;
+ text-align: center;
+  @media only screen and (max-width: 720px) {
+    font-size: 6vw;
+  }
+`
+
+export const ProductsCTA = styled.a`
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 38px;
+  background-color: #2b3fac;
+  border-radius: 40px;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: white;
+  position: relative;
+  text-align: center;
+  margin-top: -4vh;
+  margin-bottom: 2vh;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover{
+    filter: brightness(1.3);
+    transform: translateY(-4px);
+  }
+  @media only screen and (max-width: 720px) {
+    padding: 1.8vh 4vw;
+    font-size: 4vw;
+  }
+`
+
+export const Lineas = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10vw;
+  padding: 0 16vw;
+  box-sizing: border-box;
+  width: 100vw;
+  margin: clamp(40px, 6vh, 200px) 0;
+`
+
+export const LineasImg = styled.img`
+  height: clamp(300px, 44vh, 1000px);
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  transition: all 0.2s;
+  transform: ${props => props.isSelected ? "scale(1.1)" : ""};
+  @media only screen and (max-width: 720px) {
+    height: 19vh
+  }
+`
+
+export const Postventa = styled.div`
+  background-color: rgba(1, 21, 137, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  padding: 8vh 0;
+  @media only screen and (max-width: 720px) {
+    flex-direction: column;
+  }
+`
+
+export const PostventaItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(1, 21, 137, 0.85);
+  p{
+    color: #3f3f3f;
+    font-size: 1vw;
+    @media only screen and (max-width: 720px) {
+      font-size: 3.4vw;
+    }
+  }
+  div:first-of-type{
+    background-color: white;
+    min-height: 100px;
+    min-width: 100px;
+    width: 14vh;
+    height: 14vh;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    svg {
+      width: 60%;
+      height: 60%;
+      fill: #011689;
+      transform: translate(0.08vw, -0.1vh);
+    }
+  }
+  div:last-of-type{
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+    text-align: center;
+    gap: 6vh;
+    width: 22vw;
+    min-height: 300px;
+    height: 50vh;
+    margin-top: -9vh;
+    h4 {
+      color: #0033a1;
+      text-transform: uppercase;
+      font-size: 1.6vw;
+      font-weight: 700;
+      line-height: 4vh;
+    }
+    @media only screen and (max-width: 720px) {
+      width: 80vw;
+      h4 {
+        font-size: 6vw;
+      }
+    }
+  }
+  a {
+    background-color: rgba(1, 21, 137, 0.85);
+    color: white;
+    text-decoration: none;
+    font-size: 1vw;
+    padding: 2vh 1.4vw;
+    border-radius: 18px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    &:hover{
+      background-color: #2a4479;
+      transform: translateY(-3px);
+    }
+    @media only screen and (max-width: 720px) {
+      font-size: 3.4vw;
+      padding: 1vh 3vw;
+    }
+  }
 `
