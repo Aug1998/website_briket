@@ -15,7 +15,7 @@ export default function Productos() {
       <section>
         {selectedLine === "hogar" && (
           <Inner isSelected={selectedLine === "hogar"}>
-            <Producto href='https://briket.mitiendanube.com/linea-hogar/freezers/' target='_blank'>
+            <Producto>
               <h3>Freezers</h3>
               <img src={process.env.PUBLIC_URL + "/img/productos/freezer-hogar.png"} alt="" />
               <button>Más información</button>
@@ -59,12 +59,11 @@ const Container = styled.div`
   padding: 10vh 12vw;
   gap: 6vh;
   background-color: #f4f5f9;
-  @media only screen and (max-width: 720px) {
-    padding: clamp(50px, 8vh, 200px) 10vw;
-  }
   section {
     width: 100%;
     display: flex;
+  }
+  @media only screen and (max-width: 728px) {    padding: clamp(50px, 8vh, 200px) 4vw;
   }
 `
 
@@ -88,13 +87,22 @@ const Inner = styled.div`
   opacity: 0.2;
   transform: translateY(14px);
   animation: ${props => props.isSelected ? css`${fadeInFromBottom} 0.4s ease forwards` : 'none'};
-  `
+  @media only screen and (max-width: 728px) {    flex-direction: column;
+    gap: 20px;
+  }
+`
 
-const Producto = styled.a`
-  display: flex;
-  flex-direction: column;
+const Producto = styled.div`
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+    "title"
+    "img"
+    "button"
+  ;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 3px;
   user-select: none;
   border-radius: 8px;
@@ -118,37 +126,42 @@ const Producto = styled.a`
     font-weight: 600;
     grid-area: title;
     text-align: center;
+    grid-column: 1/1;
+    grid-area: title;
   }
   img {
     min-height: 140px;
     height: 20vh;
     grid-area: img;
     margin: 24px 0 40px;
+    grid-column: 1/1;
+    grid-area: img;
   }
   button {
     border-radius: 40px;
     padding: 12px 12px;
     width: 100%;
+    height: fit-content;
     border: none;
     background-color: #27389b;
     color: white;
     font-size: 0.95em;
     transition: 0.3s;
     cursor: pointer;
-   
+    grid-column: 1/1;
+    grid-area: button;
   }
-  @media only screen and (max-width: 720px) {
-    max-width: 720px;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+  @media only screen and (max-width: 728px) {    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas: 
-      'img img'
-      'title arrow'
+      "img ."
+      "img title"
+      "img button"
+      "img ."
     ;
-    padding: 30px 40px;
-    gap: 12px;
-    h3 {
-      text-align: right;
-    }
+    row-gap: 20px;
+    column-gap: 40px;
+    width: 100%;
+    padding: 10px 0;
   }
 `

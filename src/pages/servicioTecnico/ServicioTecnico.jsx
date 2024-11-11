@@ -47,8 +47,7 @@ const PageContainer = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 1024px) {
-    padding: 40px 20px 60px;
+  @media only screen and (max-width: 728px) {    padding: 40px 20px 60px;
     img{
       height: 600px;
     }

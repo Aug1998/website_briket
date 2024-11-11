@@ -19,7 +19,9 @@ export default function Home() {
 
       <Title id="productos">Productos</Title>
       <ProductsCTAContainer>
-        <ProductsBanner>Conocé todos nuestros productos</ProductsBanner>
+        <ProductsBanner>
+          <h3>Conocé todos nuestros productos</h3>
+        </ProductsBanner>
         <ProductsCTA href='https://briket.mitiendanube.com/productos/' target='_blank'>Click Acá</ProductsCTA>
       </ProductsCTAContainer>
 
@@ -32,30 +34,32 @@ export default function Home() {
 const PageContainer = styled.div`
   padding-top: 80px;
 `
+
 export const Title = styled.h3`
- text-transform: uppercase;
- font-weight: 600;
- font-size: 2vw;
- margin: 8vh 0 6vh;
- padding: 0 12vw 1vh;
- position: relative;
- letter-spacing: 1.5px;
- color: hsla(0, 0%, 0%, 0.85);
- &::before {
-  content: "";
-  width: 4.6vw;
-  height: 0.6vh;
-  background-color: rgba(1, 21, 137, 0.85);
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  margin: 0 12vw;
-}
-  @media only screen and (max-width: 1024px) {
-    padding: 0 8vw 4px;
-    font-size: 1.6em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2vw;
+  margin: 8vh 0 6vh;
+  padding: 0 12vw 1vh;
+  position: relative;
+  letter-spacing: 1.5px;
+  color: hsla(0, 0%, 0%, 0.85);
+  &::before {
+    content: "";
+    width: 4.6vw;
+    height: 0.6vh;
+    background-color: rgba(1, 21, 137, 0.85);
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    margin: 0 12vw;
+  }
+  @media only screen and (max-width: 728px) {    padding: 0 4vw 4px;
+    font-size: 1.4em;
+    margin: 6vh 0 4vh;
     &::before {
-      margin: 0 8vw;
+      width: 20%;
+      margin: 0 4vw;
   }
 }
 `
@@ -66,22 +70,29 @@ export const ProductsCTAContainer = styled.div`
   align-items: center;
 `
 
-export const ProductsBanner = styled.h3`
- text-transform: uppercase;
- width: 84%;
- padding: 80px 0;
- border-radius: 6px;
- display: flex;
- align-items: center;
- justify-content: center;
- background-color: #d3d7d6;
- font-weight: 500;
- font-size: 2.6vw;
- color: rgba(0, 0, 0, 0.85);
- position: relative;
- text-align: center;
-  @media only screen and (max-width: 720px) {
-    font-size: 6vw;
+export const ProductsBanner = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 84%;
+    padding: 80px 0;
+    border-radius: 6px;
+    background-color: #d3d7d6;
+    position: relative;
+    h3 {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 2.2em;
+      color: rgba(0, 0, 0, 0.85);
+      text-align: center;
+    }
+    @media only screen and (max-width: 720px) {
+    width: 94%;
+    h3 {
+      font-size: 1.4em;
+      max-width: 20ch;
+      line-height: 1.4em;
+    }
   }
 `
 
@@ -104,33 +115,8 @@ export const ProductsCTA = styled.a`
     filter: brightness(1.3);
     transform: translateY(-4px);
   }
-  @media only screen and (max-width: 720px) {
-    padding: 1.8vh 4vw;
+  @media only screen and (max-width: 728px) {    padding: 1.8vh 6vw;
     font-size: 4vw;
-  }
-`
-
-export const Lineas = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10vw;
-  padding: 0 16vw;
-  box-sizing: border-box;
-  width: 100vw;
-  margin: clamp(40px, 6vh, 200px) 0;
-`
-
-export const LineasImg = styled.img`
-  height: clamp(300px, 44vh, 1000px);
-  cursor: pointer;
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  transition: all 0.2s;
-  transform: ${props => props.isSelected ? "scale(1.1)" : ""};
-  @media only screen and (max-width: 720px) {
-    height: 19vh
+    margin-bottom: 30px;
   }
 `

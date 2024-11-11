@@ -51,4 +51,8 @@ const SliderItem = styled.div`
   img {
     width: 100%;
   }
+  @media only screen and (max-width: 728px) {    img {
+      transform: translateY(-48px);
+    }
+  }
 `

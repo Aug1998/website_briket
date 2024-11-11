@@ -34,13 +34,13 @@ export const Header = (props) => {
           </Nav>
         </HeaderInner>
       </HeaderWrapper>
-      {vw <= 1024 && (
+      {vw <= 728 && (
         <MobileNav isOpen={mobileNavIsOpen}>
-          <button onClick={() => document.getElementById('inicio').scrollIntoView({behavior: 'smooth'})}>Inicio</button>
-          <button onClick={() => document.getElementById('nosotros').scrollIntoView({behavior: 'smooth'})}>Nosotros</button>
-          <button onClick={() => document.getElementById('productos').scrollIntoView({behavior: 'smooth'})}>Productos</button>
-          <button onClick={() => document.getElementById('postventa').scrollIntoView({behavior: 'smooth'})}>Postventa</button>
-          <button onClick={() => document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})}>Contacto</button>
+          <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Inicio</button>
+          <button onClick={() => window.scrollTo({top: document.getElementById('nosotros').offsetTop - 100 ,behavior: 'smooth'})}>Nosotros</button>
+          <button onClick={() => window.scrollTo({top: document.getElementById('productos').offsetTop - 100 ,behavior: 'smooth'})}>Productos</button>
+          <button onClick={() => window.scrollTo({top: document.getElementById('postventa').offsetTop - 100 ,behavior: 'smooth'})}>Postventa</button>
+          <button onClick={() => window.scrollTo({top: document.getElementById('contacto').offsetTop ,behavior: 'smooth'})}>Contacto</button>
         </MobileNav>
       )}
     </>
@@ -72,8 +72,7 @@ const HeaderInner = styled.div`
   justify-content: space-between;
   padding: 0 12vw;
   z-index: 2;
-  @media only screen and (max-width: 1024px) {
-    padding: 0 0;
+  @media only screen and (max-width: 728px) {    padding: 0 0;
     justify-content: center;
   }
   @media only screen and (max-width: 1350px) {
@@ -100,21 +99,20 @@ const Nav = styled.div`
       color: #000000;
     }
   }
-  @media only screen and (max-width: 1024px) {
-    display: none;
+  @media only screen and (max-width: 728px) {    display: none;
   }
 `
 
 const MobileNav = styled.div`
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   gap: 10px;
   top: -172px;
   background-color: #ecf0f3;
   width: 100%;
-  padding: 50px 50px 20px;
-  z-index: 98;
+  padding: 40px 50px 20px;
+  z-index: 100;
   transition: all 0.3s;
   transform: ${props => props.isOpen ? "translateY(232px)" : ""};
   button {

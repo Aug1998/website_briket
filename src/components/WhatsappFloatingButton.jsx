@@ -1,5 +1,5 @@
-import React from 'react'
 import styled from '@emotion/styled'
+import React from 'react'
 
 export default function WhatsappFloatingButton() {
   return (
@@ -39,8 +39,7 @@ const ButtonContainer = styled.a`
     margin-left: 2px;
     width: 54%;
   }
-  @media only screen and (max-width: 1024px) {
-    width: 60px;
+  @media only screen and (max-width: 728px) {    width: 60px;
     height: 60px;
     right: 22px;
     bottom: 22px;

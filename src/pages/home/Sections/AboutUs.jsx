@@ -101,6 +101,8 @@ const InfoContainer = styled.div`
   justify-content: space-between;
   position: relative;
   gap: 80px;
+  @media only screen and (max-width: 728px) {    padding: 60px 4vw 30px;
+  }
 `
 
 const InfoItem = styled.div`
@@ -110,7 +112,7 @@ const InfoItem = styled.div`
     margin-bottom: 18px;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 2.3vw;
+    font-size: 1.8em;
     color: rgba(1, 21, 137, 0.85);
     transform: translateX(-20px);
     opacity: 0.2;
@@ -118,7 +120,7 @@ const InfoItem = styled.div`
   }
   p {
     max-width: 64ch;
-    font-size: 1vw;
+    font-size: 0.85em;
     line-height: 1.5em;
     transform: translateX(-20px);
     opacity: 0.2;
@@ -133,6 +135,8 @@ const InfoItem = styled.div`
     opacity: 0.2;
     transform: translateX(20px);
     animation: ${props => props.isSelected ? css`${fadeInFromRight} 0.8s ease forwards` : 'none'};
+    @media only screen and (max-width: 728px) {      left: -30vw;
+    }
   }
 `
 const fadeInFromLeft = keyframes`
@@ -165,8 +169,7 @@ const HeroBoxes = styled.div`
   justify-content: space-between;
   padding: 0 12vw;
   margin-bottom: -4vh;
-  @media only screen and (max-width: 1024px) {
-    padding: 0 20px;
+  @media only screen and (max-width: 728px) {    padding: 0 14px;
   }
 `
 
@@ -185,15 +188,11 @@ const Box = styled.div`
   user-select: none;
   border-radius: 2px;
   box-shadow: rgba(15, 15, 15, 0.2) 0px 4px ${props => (props.isSelected ? "10px" : "6px")} 0px;
-  /* background-color: ${props => (props.isSelected ? "#d3d7d6" : "#e8eef2")}; */
   filter: brightness(0.94);
   background: 
     linear-gradient(112.5deg, rgba(232, 232, 232, 0.03) 0%, rgba(232, 232, 232, 0.03) 2%, rgba(231, 231, 231, 0.03) 2%, rgba(231, 231, 231, 0.03) 4%, rgba(231, 231, 231, 0.03) 4%, rgba(231, 231, 231, 0.03) 11%, rgba(2, 2, 2, 0.03) 11%, rgba(2, 2, 2, 0.03) 67%, rgba(231, 231, 231, 0.03) 67%, rgba(231, 231, 231, 0.03) 90%, rgba(111, 111, 111, 0.03) 90%, rgba(111, 111, 111, 0.03) 100%), 
-    
     linear-gradient(157.5deg, rgba(210, 210, 210, 0.03) 0%, rgba(210, 210, 210, 0.03) 17%, rgba(254, 254, 254, 0.03) 17%, rgba(254, 254, 254, 0.03) 18%, rgba(96, 96, 96, 0.03) 18%, rgba(96, 96, 96, 0.03) 44%, rgba(159, 159, 159, 0.03) 44%, rgba(159, 159, 159, 0.03) 70%, rgba(24, 24, 24, 0.03) 70%, rgba(24, 24, 24, 0.03) 82%, rgba(16, 16, 16, 0.03) 82%, rgba(16, 16, 16, 0.03) 100%), 
-    
     linear-gradient(22.5deg, rgba(47, 47, 47, 0.03) 0%, rgba(47, 47, 47, 0.03) 32%, rgba(124, 124, 124, 0.03) 32%, rgba(124, 124, 124, 0.03) 40%, rgba(200, 200, 200, 0.03) 40%, rgba(200, 200, 200, 0.03) 42%, rgba(16, 16, 16, 0.03) 42%, rgba(16, 16, 16, 0.03) 64%, rgba(243, 243, 243, 0.03) 64%, rgba(243, 243, 243, 0.03) 94%, rgba(93, 93, 93, 0.03) 94%, rgba(93, 93, 93, 0.03) 100%), 
-    
     linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
   img {
     height: 74px;
@@ -209,13 +208,12 @@ const Box = styled.div`
   &:hover{
     background-color: #d3d7d6;
   }
-  @media only screen and (max-width: 1024px) {
-    padding: 16px;
-    width: 30%;
-    max-height: unset;
-    height: 184px;
+  @media only screen and (max-width: 728px) {    align-items: center;
+    padding: 0px;
+    width: 28vw;
+    height: 28vw;
     img {
-      width: 90px;
+      width: 15vw;
       height: unset;
     }
     h4 {

@@ -168,8 +168,8 @@ const Container = styled.div`
   position: relative;
   gap: 5vw;
   padding: 12vh 0;
-  @media only screen and (max-width: 720px) {
-    flex-direction: column;
+  @media only screen and (max-width: 728px) {    flex-direction: column;
+    padding: 8vh 0;
   }
 `
 
@@ -179,13 +179,6 @@ const PostventaItem = styled.div`
   align-items: center;
   justify-content: space-between;
   z-index: 2;
-  p{
-    color: rgba(0, 0, 0, 0.85);
-    font-size: 1vw;
-    @media only screen and (max-width: 720px) {
-      font-size: 3.4vw;
-    }
-  }
   div:first-of-type{
     background-color: white;
     min-height: 100px;
@@ -210,26 +203,32 @@ const PostventaItem = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 28px;
-    padding: 86px 0.6vw 30px;
+    gap: 38px;
+    padding: 80px 0.6vw 30px;
     text-align: center;
     width: 22vw;
     min-height: 300px;
     height: 50vh;
-    margin-top: -9vh;
+    margin-top: -8vh;
+    p {
+      color: rgba(0, 0, 0, 0.85);
+      font-size: 0.85em;
+    }
     h4 {
       color: rgba(1, 21, 137, 0.85);
       text-transform: uppercase;
-      font-size: 1.6vw;
+      font-size: 1.4em;
       font-weight: 700;
       line-height: 4vh;
+    }
+    @media only screen and (max-width: 728px) {      width: 76vw;
     }
   }
   a {
     background-color: rgba(1, 21, 137, 0.85);
     color: white;
     text-decoration: none;
-    font-size: 1vw;
+    font-size: 0.85em;
     padding: 1.9vh 1.8vw;
     border-radius: 40px;
     text-transform: uppercase;
@@ -237,6 +236,8 @@ const PostventaItem = styled.div`
     &:hover{
       filter: brightness(1.4);
       transform: translateY(-2px);
+    }
+    @media only screen and (max-width: 728px) {      width: 60%;
     }
   }
 `
