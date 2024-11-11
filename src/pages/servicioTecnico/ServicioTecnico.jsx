@@ -42,8 +42,8 @@ const PageContainer = styled.div`
       padding: 4px 10px;
       transition: 0.2s;
       &:hover{
+        filter: brightness(1.4);
         font-size: 1.01em;
-        background-color: #2a4479;
       }
     }
   }

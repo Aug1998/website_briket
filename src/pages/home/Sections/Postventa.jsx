@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import PostventaAnimation from '../../../components/PostventaAnimation'
 import { Title } from '../Home'
 
 export default function Postventa() {
@@ -7,6 +8,7 @@ export default function Postventa() {
     <>
       <Title id="postventa">Postventa</Title>
       <Container>
+        <PostventaAnimation/>
         <PostventaItem>
           <div>
             <svg version="1.0" viewBox="0 0 279.000000 279.000000" preserveAspectRatio="xMidYMid meet">
@@ -163,8 +165,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   gap: 5vw;
-  padding: 8vh 0;
+  padding: 12vh 0;
   @media only screen and (max-width: 720px) {
     flex-direction: column;
   }
@@ -175,9 +178,9 @@ const PostventaItem = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(1, 21, 137, 0.85);
+  z-index: 2;
   p{
-    color: #3f3f3f;
+    color: rgba(0, 0, 0, 0.85);
     font-size: 1vw;
     @media only screen and (max-width: 720px) {
       font-size: 3.4vw;
@@ -198,35 +201,28 @@ const PostventaItem = styled.div`
       width: 60%;
       height: 60%;
       fill: #011689;
-      transform: translate(0.08vw, -0.1vh);
     }
   }
   div:last-of-type{
+    border-radius: 8px;
     background-size: contain;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-left: 0.6vw;
-    padding-right: 0.6vw;
+    justify-content: flex-start;
+    gap: 28px;
+    padding: 86px 0.6vw 30px;
     text-align: center;
-    gap: 6vh;
     width: 22vw;
     min-height: 300px;
     height: 50vh;
     margin-top: -9vh;
     h4 {
-      color: #0033a1;
+      color: rgba(1, 21, 137, 0.85);
       text-transform: uppercase;
       font-size: 1.6vw;
       font-weight: 700;
       line-height: 4vh;
-    }
-    @media only screen and (max-width: 720px) {
-      width: 80vw;
-      h4 {
-        font-size: 6vw;
-      }
     }
   }
   a {
@@ -234,17 +230,13 @@ const PostventaItem = styled.div`
     color: white;
     text-decoration: none;
     font-size: 1vw;
-    padding: 2vh 1.4vw;
-    border-radius: 18px;
+    padding: 1.9vh 1.8vw;
+    border-radius: 40px;
     text-transform: uppercase;
     transition: 0.2s;
     &:hover{
-      background-color: #2a4479;
-      transform: translateY(-3px);
-    }
-    @media only screen and (max-width: 720px) {
-      font-size: 3.4vw;
-      padding: 1vh 3vw;
+      filter: brightness(1.4);
+      transform: translateY(-2px);
     }
   }
 `
