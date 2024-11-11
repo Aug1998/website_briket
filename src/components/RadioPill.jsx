@@ -26,6 +26,7 @@ export default function RadioPill({ selectedOption, handleClick }) {
 }
 
 const Container = styled.div`
+  user-select: none;
   border: 2px solid transparent;
   border-radius: 30px;
   background-color: rgba(0, 0, 0, 0.85);

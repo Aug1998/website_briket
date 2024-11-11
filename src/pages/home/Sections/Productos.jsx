@@ -1,3 +1,4 @@
+import { css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import React, { useState } from 'react'
 import RadioPill from '../../../components/RadioPill'
@@ -13,7 +14,7 @@ export default function Productos() {
       />
       <section>
         {selectedLine === "hogar" && (
-          <>
+          <Inner isSelected={selectedLine === "hogar"}>
             <Producto href='https://briket.mitiendanube.com/linea-hogar/freezers/' target='_blank'>
               <h3>Freezers</h3>
               <img src={process.env.PUBLIC_URL + "/img/productos/freezer-hogar.png"} alt="" />
@@ -29,10 +30,10 @@ export default function Productos() {
               <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-hogar.png"} alt="" />
               <button>Más información</button>
             </Producto>
-          </>
+          </Inner>
         )}
         {selectedLine === "comercial" && (
-          <>
+          <Inner isSelected={selectedLine === "comercial"}>
             <Producto href='https://briket.mitiendanube.com/linea-comercial/freezers1/' target='_blank'>
               <h3>Freezers</h3>
               <img src={process.env.PUBLIC_URL + "/img/productos/freezer-comercial.png"} alt="" />
@@ -43,7 +44,7 @@ export default function Productos() {
               <img src={process.env.PUBLIC_URL + "/img/productos/exhibidora-comercial.png"} alt="" />
               <button>Más información</button>
             </Producto>
-          </>
+          </Inner>
         )}
       </section>
     </Container>
@@ -55,29 +56,50 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(50px, 8vh, 200px) 18vw;
+  padding: 10vh 12vw;
   gap: 6vh;
   background-color: #f4f5f9;
   @media only screen and (max-width: 720px) {
     padding: clamp(50px, 8vh, 200px) 10vw;
   }
   section {
+    width: 100%;
     display: flex;
-    gap: 40px;
   }
 `
 
+const fadeInFromBottom = keyframes`
+  from {
+    opacity: 0.2;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const Inner = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  opacity: 0.2;
+  transform: translateY(14px);
+  animation: ${props => props.isSelected ? css`${fadeInFromBottom} 0.4s ease forwards` : 'none'};
+  `
+
 const Producto = styled.a`
-  border-radius: 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  border-radius: 3px;
   user-select: none;
-
   border-radius: 8px;
   background-color: #d3d7d6;
-  width: 320px;
+  width: 340px;
   padding: 50px 40px;
   cursor: pointer;
   transition: 0.3s;
@@ -115,7 +137,6 @@ const Producto = styled.a`
     cursor: pointer;
    
   }
-
   @media only screen and (max-width: 720px) {
     max-width: 720px;
     grid-template-columns: auto auto;

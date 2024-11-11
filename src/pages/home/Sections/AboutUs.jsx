@@ -106,7 +106,7 @@ const InfoContainer = styled.div`
 const InfoItem = styled.div`
   display: flex;
   flex-direction: column;
-  h3{
+  h3 {
     margin-bottom: 18px;
     text-transform: uppercase;
     font-weight: 600;
@@ -116,7 +116,7 @@ const InfoItem = styled.div`
     opacity: 0.2;
     animation: ${props => props.isSelected ? css`${fadeInFromLeft} 0.8s ease forwards` : 'none'};
   }
-  p{
+  p {
     max-width: 64ch;
     font-size: 1vw;
     line-height: 1.5em;
@@ -130,9 +130,8 @@ const InfoItem = styled.div`
     top: 0px;
     height: 100%;
     mask-image: linear-gradient(to left, black, transparent ) ;
-    transition: all 0.8s ease;
-    transform: translateX(20px);
     opacity: 0.2;
+    transform: translateX(20px);
     animation: ${props => props.isSelected ? css`${fadeInFromRight} 0.8s ease forwards` : 'none'};
   }
 `
