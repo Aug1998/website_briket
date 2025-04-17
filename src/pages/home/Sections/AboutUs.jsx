@@ -34,7 +34,7 @@ export default function AboutUs() {
               <br/><br/>
               Nuestros productos se destacan por su nobleza, excelentes prestaciones y una relación calidad-precio inigualable.
               <br/><br/>
-              Nuestra marca se caracteriza por su enfoque en la confianza, la tradición y las implicidad. Nos esforzamos por proporcionar soluciones funcionales y elegantes para consumidores que valoran la practicidad por encima de la sofisticación y la elegancia por encima del vanguardismo. Con el paso de los años, hemos dedicado nuestros esfuerzos al desarrollo de productos exclusivos y novedosos.
+              Nuestra marca se caracteriza por su enfoque en la confianza, la tradición y la simplicidad. Nos esforzamos por proporcionar soluciones funcionales y elegantes para consumidores que valoran la practicidad por encima de la sofisticación y la elegancia por encima del vanguardismo. Con el paso de los años, hemos dedicado nuestros esfuerzos al desarrollo de productos exclusivos y novedosos.
               <br/><br/>
               Además de servir al mercado de consumo, también atendemos al segmento comercial/industrial con diversas líneas de productos. En este ámbito, nos enfocamos en transmitir confianza, seguridad en el funcionamiento y practicidad en el uso de nuestros productos. Dado que se trata de bien es de uso, aseguramos una relación óptima entre precio y prestación.
             </p>
